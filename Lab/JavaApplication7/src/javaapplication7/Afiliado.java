@@ -33,5 +33,7 @@ public class Afiliado extends Persona{
     public void setAbono(Integer abono) {
         this.abono = abono;
     }
+
+
     
 }
