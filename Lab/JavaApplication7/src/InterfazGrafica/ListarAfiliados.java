@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 package InterfazGrafica;
+import java.util.ArrayList;
+import java.util.Iterator;
 import javaapplication7.Afiliado;
 import javaapplication7.Colecciones;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,12 +16,12 @@ import javaapplication7.Colecciones;
  */
 public class ListarAfiliados extends javax.swing.JFrame {
 
+    private ArrayList<Afiliado> afiliados = new ArrayList<Afiliado>();
     private Colecciones colecciones;
     private Afiliado afiliado;
     
     public ListarAfiliados(){
         initComponents();
-     
     }
     
     /**
@@ -30,7 +33,15 @@ public class ListarAfiliados extends javax.swing.JFrame {
         setTitle("Lista de Afiliados");
         setResizable(false);
         initComponents();
-         this.setLocationRelativeTo(null);
+        if(!colecciones.getAfiliados().isEmpty()) {
+            Iterator iterador = colecciones.getAfiliados().listIterator(); 
+            while (iterador.hasNext()) {
+                mostrarafiliados.append(iterador.next() + "\n\n"); 
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "No existen afiliados", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
     }
 
     /**
@@ -44,20 +55,19 @@ public class ListarAfiliados extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        mostrarafiliados = new javax.swing.JTextArea();
         atras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 450));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 450));
 
         jLabel2.setFont(new java.awt.Font("Bell MT", 0, 25)); // NOI18N
         jLabel2.setText("Lista de Afiliados");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        mostrarafiliados.setColumns(20);
+        mostrarafiliados.setRows(5);
+        jScrollPane1.setViewportView(mostrarafiliados);
 
         atras.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         atras.setText("Atras");
@@ -146,6 +156,6 @@ public class ListarAfiliados extends javax.swing.JFrame {
     private javax.swing.JButton atras;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea mostrarafiliados;
     // End of variables declaration//GEN-END:variables
 }
