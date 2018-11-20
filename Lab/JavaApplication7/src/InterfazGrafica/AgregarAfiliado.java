@@ -290,24 +290,32 @@ public class AgregarAfiliado extends javax.swing.JFrame {
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
         // TODO add your handling code here:
         
-        String nom, ape, dom;
-        Integer dnii, tel, numaf=10, abon=10;
+        String nom, ape, dom, sex="";
+        Integer dnii, tel, numaf=10, abon=10, dia, mes, anio;
         nom=nombre.getText();
         ape=apellido.getText();
         dnii=Integer.parseInt(dni.getText());
         tel=Integer.parseInt(telefono.getText());
         dom=domicilio.getText();
-        Afiliado afi=new Afiliado(nom, ape, dnii, dom, tel, numaf, abon);
-       
+        if (femenino.isSelected()){
+                sex = "Femenino";
+            }
+            if (masculino.isSelected()){
+                sex = "Masculino";
+            }
+        dia=Integer.parseInt(fechaDia.getText());
+        mes=Integer.parseInt(fechaMes.getText());
+        anio=Integer.parseInt(fechaAnio.getText());
+        Afiliado afi=new Afiliado(nom, ape,sex , dnii, dom, tel,dia, mes,anio, numaf, abon);
         colecciones.setAfiliados(afi);
-        /*nombre.setText(null);
+        nombre.setText(null);
         apellido.setText(null);        
         dni.setText(null);
         domicilio.setText(null);
         telefono.setText(null);
         fechaDia.setText(null);
         fechaMes.setText(null);
-        */
+       
         
        fechaAnio.setText(null);
         JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);

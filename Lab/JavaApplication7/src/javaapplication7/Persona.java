@@ -2,18 +2,26 @@ package javaapplication7;
 
 
 public class Persona {
-       private String nombre;
-       private String apellido;
-       private Integer dni;
-       private String domicilio;
-       private Integer telefono;
+       protected String nombre;
+       protected String apellido;
+       protected String sexo;
+       protected Integer dni;
+       protected String domicilio;
+       protected Integer telefono;
+       protected Integer diaNac;
+       protected Integer mesNac;
+       protected Integer anioNac;
        
-       public Persona(String nombre, String apellido, Integer dni, String domicilio, Integer telefono){
+       public Persona(String nombre, String apellido, String sexo, Integer dni, String domicilio, Integer telefono, Integer diaNac, Integer mesNac, Integer anioNac){
            this.nombre=nombre;
            this.apellido=apellido;
+           this.sexo=sexo;
            this.dni=dni;
            this.domicilio=domicilio;
            this.telefono=telefono;
+           this.diaNac=diaNac;
+           this.mesNac=mesNac;
+           this.anioNac=anioNac;
        }
        
        public Persona(){}

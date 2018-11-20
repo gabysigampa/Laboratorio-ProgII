@@ -7,12 +7,12 @@ package javaapplication7;
  */
 public class Doctor extends Persona{
     private String especialidad;
-    private Integer matricula;
+    private String numEmpleado;
     
-    public Doctor(String nombre, String apellido, Integer dni, String domicilio, Integer telefono, String especialidad, Integer matricula){
-        super(nombre, apellido, dni, domicilio, telefono);
+    public Doctor(String nombre, String apellido, String sexo, Integer dni, String domicilio, Integer telefono, Integer diaNac, Integer mesNac, Integer anioNac, String especialidad, String numEmpleado ){
+        super(nombre, apellido, sexo, dni, domicilio, telefono, diaNac, mesNac, anioNac);
         this.especialidad=especialidad;
-        this.matricula=matricula;
+        this.numEmpleado=numEmpleado;
     }
 
     
@@ -25,13 +25,20 @@ public class Doctor extends Persona{
         this.especialidad = especialidad;
     }
 
-    
-    public Integer getMatricula() {
-        return matricula;
+    /**
+     * @return the numEmpleado
+     */
+    public String getNumEmpleado() {
+        return numEmpleado;
+    }
+
+    /**
+     * @param numEmpleado the numEmpleado to set
+     */
+    public void setNumEmpleado(String numEmpleado) {
+        this.numEmpleado = numEmpleado;
     }
 
     
-    public void setMatricula(Integer matricula) {
-        this.matricula = matricula;
-    }
+   
 }
