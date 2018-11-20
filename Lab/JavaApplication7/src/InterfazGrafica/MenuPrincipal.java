@@ -18,6 +18,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     
     public MenuPrincipal() {
         initComponents();
+       this.setLocationRelativeTo(null);
     }
     
     /**
@@ -29,6 +30,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setTitle("Sistema de Emergencia Medica - Menu Principal");
         setResizable(false);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -47,7 +49,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 450));
         setResizable(false);
 
         gestionarAfiliado.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
@@ -60,6 +61,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         gestionarEmpleado.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         gestionarEmpleado.setText("Gestionar Empleados");
+        gestionarEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gestionarEmpleadoActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Bell MT", 0, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -93,10 +99,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(asistenciaMedica, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(gestionarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(gestionarAfiliado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(asistenciaMedica, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(gestionarEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(gestionarAfiliado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(200, 200, 200))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,6 +142,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_salirActionPerformed
+
+    private void gestionarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarEmpleadoActionPerformed
+        MenuEmpleadosPrincipal menuempleados =new MenuEmpleadosPrincipal();
+        menuempleados.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_gestionarEmpleadoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Fernando
+ * @author Fernando y Braian
  */
 public class AgregarAfiliado extends javax.swing.JFrame {
     
@@ -17,6 +17,8 @@ public class AgregarAfiliado extends javax.swing.JFrame {
     
     public AgregarAfiliado(){
         initComponents();
+        
+        this.setLocationRelativeTo(null);
     }
     
     /**
@@ -296,19 +298,23 @@ public class AgregarAfiliado extends javax.swing.JFrame {
         tel=Integer.parseInt(telefono.getText());
         dom=domicilio.getText();
         Afiliado afi=new Afiliado(nom, ape, dnii, dom, tel, numaf, abon);
+       
         colecciones.setAfiliados(afi);
-        nombre.setText(null);
+        /*nombre.setText(null);
         apellido.setText(null);        
         dni.setText(null);
         domicilio.setText(null);
         telefono.setText(null);
         fechaDia.setText(null);
         fechaMes.setText(null);
-        fechaAnio.setText(null);
+        */
+        
+       fechaAnio.setText(null);
         JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+        
         MenuAfiliado menuafi=new MenuAfiliado(afiliado, colecciones);
         menuafi.setVisible(true);
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_agregarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed

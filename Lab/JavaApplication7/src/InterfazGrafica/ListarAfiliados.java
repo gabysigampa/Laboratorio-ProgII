@@ -18,6 +18,7 @@ public class ListarAfiliados extends javax.swing.JFrame {
     
     public ListarAfiliados(){
         initComponents();
+     
     }
     
     /**
@@ -29,6 +30,7 @@ public class ListarAfiliados extends javax.swing.JFrame {
         setTitle("Lista de Afiliados");
         setResizable(false);
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**

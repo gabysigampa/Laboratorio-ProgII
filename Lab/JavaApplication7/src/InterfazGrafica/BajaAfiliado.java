@@ -34,7 +34,6 @@ public class BajaAfiliado extends javax.swing.JFrame {
         cancelar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 300));
         setResizable(false);
         setSize(new java.awt.Dimension(600, 300));
 

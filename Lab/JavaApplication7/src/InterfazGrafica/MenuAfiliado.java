@@ -25,6 +25,9 @@ public class MenuAfiliado extends javax.swing.JFrame {
         setTitle("Menu Afiliado");
         setResizable(false);
         initComponents();
+         afiliado=a;
+        colecciones=e;
+        this.setLocationRelativeTo(null);
     }
 
     /**
