@@ -5,14 +5,14 @@ public class Persona {
        protected String nombre;
        protected String apellido;
        protected String sexo;
-       protected Integer dni;
+       protected String dni;
        protected String domicilio;
-       protected Integer telefono;
+       protected String telefono;
        protected Integer diaNac;
        protected Integer mesNac;
        protected Integer anioNac;
        
-       public Persona(String nombre, String apellido, String sexo, Integer dni, String domicilio, Integer telefono, Integer diaNac, Integer mesNac, Integer anioNac){
+       public Persona(String nombre, String apellido, String sexo, String dni, String domicilio, String telefono, Integer diaNac, Integer mesNac, Integer anioNac){
            this.nombre=nombre;
            this.apellido=apellido;
            this.sexo=sexo;
@@ -47,12 +47,12 @@ public class Persona {
     }
 
     
-    public Integer getDni() {
+    public String getDni() {
         return dni;
     }
 
     
-    public void setDni(Integer dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 
@@ -67,12 +67,12 @@ public class Persona {
     }
 
     
-    public Integer getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
     
-    public void setTelefono(Integer telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
         

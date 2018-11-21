@@ -13,7 +13,7 @@ public class Main {
         Colecciones cole= new Colecciones();
         MenuPrincipal interfaz=new MenuPrincipal(afil, cole);
         
-        Afiliado afiliado = new Afiliado("Jose","Perez","Masculino",383455555 ,"Calle falsa 123",298222, 0, 0,8,5,1998);
+        Afiliado afiliado = new Afiliado("Jose","Perez","Masculino","383455555" ,"Calle falsa 123","298222", 0, 0,8,5,1998);
         cole.setAfiliados(afiliado);
         
         interfaz.setVisible(true);

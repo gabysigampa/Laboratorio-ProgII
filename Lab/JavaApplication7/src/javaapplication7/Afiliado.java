@@ -6,7 +6,7 @@ public class Afiliado extends Persona{
     private Integer abono;
     //otro atrubituo para ver familiares asignados a este afiliado
     
-    public Afiliado(String nombre, String apellido, String sexo, Integer dni, String domicilio, Integer telefono, Integer diaNac,Integer mesNac, Integer anioNac, Integer numeroAfiliado, Integer abono){
+    public Afiliado(String nombre, String apellido, String sexo, String dni, String domicilio, String telefono, Integer diaNac,Integer mesNac, Integer anioNac, Integer numeroAfiliado, Integer abono){
         super(nombre, apellido, sexo, dni, domicilio, telefono, diaNac, mesNac, anioNac);
         this.numeroAfiliado=numeroAfiliado;
         this.abono=abono;
