@@ -50,6 +50,11 @@ public class MenuChofer extends javax.swing.JFrame {
 
         listarchofer.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         listarchofer.setText("Listar Choferes");
+        listarchofer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarchoferActionPerformed(evt);
+            }
+        });
 
         Modificarchofer.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         Modificarchofer.setText("Modificar Chofer");
@@ -119,6 +124,12 @@ public class MenuChofer extends javax.swing.JFrame {
      menuEmpleadosPrincipal.setVisible(true);
      this.dispose();        
     }//GEN-LAST:event_atrasActionPerformed
+
+    private void listarchoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarchoferActionPerformed
+        ListarChofer listarChofer=new ListarChofer();
+        listarChofer.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_listarchoferActionPerformed
 
     /**
      * @param args the command line arguments
