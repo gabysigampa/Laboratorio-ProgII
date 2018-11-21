@@ -61,6 +61,11 @@ public class MenuChofer extends javax.swing.JFrame {
 
         eliminar.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         eliminar.setText("Dar de Baja Chofer");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
 
         atras.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         atras.setText("Atras");
@@ -130,6 +135,12 @@ public class MenuChofer extends javax.swing.JFrame {
         listarChofer.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_listarchoferActionPerformed
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+       BajaChofer bajaChofer=new BajaChofer();
+       bajaChofer.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_eliminarActionPerformed
 
     /**
      * @param args the command line arguments
