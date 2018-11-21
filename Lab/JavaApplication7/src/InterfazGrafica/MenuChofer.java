@@ -109,7 +109,7 @@ public class MenuChofer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarchoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarchoferActionPerformed
-        AñadirChofer añadirChofer =new AñadirChofer();
+        AgregarChofer añadirChofer =new AgregarChofer();
         añadirChofer.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_agregarchoferActionPerformed
