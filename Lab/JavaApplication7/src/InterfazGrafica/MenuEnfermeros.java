@@ -69,6 +69,11 @@ public class MenuEnfermeros extends javax.swing.JFrame {
 
         eliminar.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         eliminar.setText("Dar de Baja Enfermero");
+        eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,6 +137,12 @@ public class MenuEnfermeros extends javax.swing.JFrame {
        listarEnfermero.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_listaenfermeroActionPerformed
+
+    private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
+        BajaEnfermero bajaEnfermero=new BajaEnfermero();
+        bajaEnfermero.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_eliminarActionPerformed
 
     /**
      * @param args the command line arguments
