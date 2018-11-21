@@ -29,39 +29,16 @@ public class MenuEnfermeros extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        agregar = new javax.swing.JButton();
-        buscar = new javax.swing.JButton();
-        quitar = new javax.swing.JButton();
         atras = new javax.swing.JButton();
-        nombre1 = new javax.swing.JLabel();
-        apellido1 = new javax.swing.JLabel();
-        edad1 = new javax.swing.JLabel();
-        sexo1 = new javax.swing.JLabel();
-        dom = new javax.swing.JLabel();
-        telefono1 = new javax.swing.JLabel();
-        busqueda = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listadoEnfermeros = new javax.swing.JList<>();
-        nombre = new javax.swing.JTextField();
-        apellido = new javax.swing.JTextField();
-        edad = new javax.swing.JTextField();
-        sexo = new javax.swing.JTextField();
-        domicilio = new javax.swing.JTextField();
-        telefono = new javax.swing.JTextField();
+        añadirenfermero = new javax.swing.JButton();
+        listaenfermero = new javax.swing.JButton();
+        modificarenfermero = new javax.swing.JButton();
+        eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Bell MT", 0, 24)); // NOI18N
-        jLabel1.setText("Enfermeros");
-
-        agregar.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        agregar.setText("Agregar");
-
-        buscar.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        buscar.setText("Buscar");
-
-        quitar.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        quitar.setText("Quitar");
+        jLabel1.setText("Gestionar Enfermeros");
 
         atras.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         atras.setText("Atras");
@@ -71,167 +48,65 @@ public class MenuEnfermeros extends javax.swing.JFrame {
             }
         });
 
-        nombre1.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        nombre1.setText("Nombre:");
-
-        apellido1.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        apellido1.setText("Apellido:");
-
-        edad1.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        edad1.setText("Edad:");
-
-        sexo1.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        sexo1.setText("Sexo:");
-
-        dom.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        dom.setText("Domicilio:");
-
-        telefono1.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        telefono1.setText("Telefono:");
-
-        busqueda.addActionListener(new java.awt.event.ActionListener() {
+        añadirenfermero.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
+        añadirenfermero.setText("Añadir Enfermero");
+        añadirenfermero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                busquedaActionPerformed(evt);
+                añadirenfermeroActionPerformed(evt);
             }
         });
 
-        jScrollPane1.setViewportView(listadoEnfermeros);
+        listaenfermero.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
+        listaenfermero.setText("Listar Enfermeros");
 
-        nombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreActionPerformed(evt);
-            }
-        });
+        modificarenfermero.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
+        modificarenfermero.setText("Modificar Enfermero");
 
-        apellido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                apellidoActionPerformed(evt);
-            }
-        });
-
-        edad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edadActionPerformed(evt);
-            }
-        });
-
-        sexo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sexoActionPerformed(evt);
-            }
-        });
-
-        telefono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                telefonoActionPerformed(evt);
-            }
-        });
+        eliminar.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
+        eliminar.setText("Dar de Baja Enfermero");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(añadirenfermero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(listaenfermero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(modificarenfermero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(190, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(nombre1)
-                                .addGap(18, 18, 18)
-                                .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(edad1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(apellido1)
-                                    .addComponent(sexo1))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(apellido)
-                                    .addComponent(edad)
-                                    .addComponent(sexo, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(telefono1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(dom)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(domicilio, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(buscar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 10, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(220, 220, 220)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(agregar)
-                                .addGap(40, 40, 40)
-                                .addComponent(quitar)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(188, 188, 188))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(agregar)
-                    .addComponent(quitar)
-                    .addComponent(buscar)
-                    .addComponent(busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nombre1)
-                            .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(apellido1)
-                            .addComponent(apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(edad1)
-                            .addComponent(edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(sexo1)
-                            .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dom)
-                            .addComponent(domicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(telefono1)
-                            .addComponent(telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addGap(36, 36, 36)
+                .addComponent(añadirenfermero, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(listaenfermero, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(modificarenfermero, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void busquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busquedaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_busquedaActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
     
@@ -241,25 +116,9 @@ public class MenuEnfermeros extends javax.swing.JFrame {
         
     }//GEN-LAST:event_atrasActionPerformed
 
-    private void nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreActionPerformed
+    private void añadirenfermeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirenfermeroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreActionPerformed
-
-    private void apellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_apellidoActionPerformed
-
-    private void edadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edadActionPerformed
-
-    private void sexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sexoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sexoActionPerformed
-
-    private void telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_telefonoActionPerformed
+    }//GEN-LAST:event_añadirenfermeroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -297,25 +156,11 @@ public class MenuEnfermeros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton agregar;
-    private javax.swing.JTextField apellido;
-    private javax.swing.JLabel apellido1;
     private javax.swing.JButton atras;
-    private javax.swing.JButton buscar;
-    private javax.swing.JTextField busqueda;
-    private javax.swing.JLabel dom;
-    private javax.swing.JTextField domicilio;
-    private javax.swing.JTextField edad;
-    private javax.swing.JLabel edad1;
+    private javax.swing.JButton añadirenfermero;
+    private javax.swing.JButton eliminar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList<String> listadoEnfermeros;
-    private javax.swing.JTextField nombre;
-    private javax.swing.JLabel nombre1;
-    private javax.swing.JButton quitar;
-    private javax.swing.JTextField sexo;
-    private javax.swing.JLabel sexo1;
-    private javax.swing.JTextField telefono;
-    private javax.swing.JLabel telefono1;
+    private javax.swing.JButton listaenfermero;
+    private javax.swing.JButton modificarenfermero;
     // End of variables declaration//GEN-END:variables
 }
