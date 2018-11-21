@@ -32,7 +32,7 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         empleadosAdministrativos = new javax.swing.JButton();
         enfermeros = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        choferes = new javax.swing.JButton();
         doctores = new javax.swing.JButton();
         atras = new javax.swing.JButton();
 
@@ -58,8 +58,13 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        jButton3.setText("Choferes");
+        choferes.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
+        choferes.setText("Choferes");
+        choferes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                choferesActionPerformed(evt);
+            }
+        });
 
         doctores.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         doctores.setText("Doctores");
@@ -85,7 +90,7 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(doctores, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(choferes, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(enfermeros, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                     .addComponent(empleadosAdministrativos, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                 .addGap(192, 192, 192))
@@ -110,7 +115,7 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(doctores, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(choferes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(atras, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                 .addContainerGap())
@@ -144,6 +149,12 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_enfermerosActionPerformed
+
+    private void choferesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choferesActionPerformed
+       MenuChofer menuChofer =new MenuChofer();
+       menuChofer.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_choferesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,10 +194,10 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atras;
+    private javax.swing.JButton choferes;
     private javax.swing.JButton doctores;
     private javax.swing.JButton empleadosAdministrativos;
     private javax.swing.JButton enfermeros;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
