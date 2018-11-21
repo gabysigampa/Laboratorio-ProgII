@@ -120,7 +120,7 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void empleadosAdministrativosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empleadosAdministrativosActionPerformed
-       EmpleadosAdministrativos empleadosadministrativos = new EmpleadosAdministrativos();
+       MenuEmpleadosAdministrativos empleadosadministrativos = new MenuEmpleadosAdministrativos();
        empleadosadministrativos.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_empleadosAdministrativosActionPerformed

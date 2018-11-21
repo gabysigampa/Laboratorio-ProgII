@@ -9,12 +9,12 @@ package InterfazGrafica;
  *
  * @author Braian
  */
-public class EmpleadosAdministrativos extends javax.swing.JFrame {
+public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuEmpleadosAdministrativos
      */
-    public EmpleadosAdministrativos() {
+    public MenuEmpleadosAdministrativos() {
         initComponents();
         
     this.setLocationRelativeTo(null);
@@ -43,7 +43,6 @@ public class EmpleadosAdministrativos extends javax.swing.JFrame {
         atras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 450));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Bell MT", 0, 24)); // NOI18N
@@ -191,21 +190,23 @@ public class EmpleadosAdministrativos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EmpleadosAdministrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuEmpleadosAdministrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EmpleadosAdministrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuEmpleadosAdministrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EmpleadosAdministrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuEmpleadosAdministrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EmpleadosAdministrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuEmpleadosAdministrativos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EmpleadosAdministrativos().setVisible(true);
+                new MenuEmpleadosAdministrativos().setVisible(true);
             }
         });
     }
