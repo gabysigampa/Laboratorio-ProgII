@@ -76,6 +76,11 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
 
         eliminarempledo.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         eliminarempledo.setText("Dar de Baja Empleado");
+        eliminarempledo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarempledoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,6 +148,12 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
          añadirEmpleadoAdministrativo.setVisible(true);
          this.dispose();
     }//GEN-LAST:event_añadirempleadoActionPerformed
+
+    private void eliminarempledoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarempledoActionPerformed
+       BajaEmpleadoAdministrativo bajaEmpleadoAdministrativo = new BajaEmpleadoAdministrativo();
+       bajaEmpleadoAdministrativo.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_eliminarempledoActionPerformed
 
     /**
      * @param args the command line arguments

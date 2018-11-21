@@ -16,6 +16,7 @@ public class BajaEmpleadoAdministrativo extends javax.swing.JFrame {
      */
     public BajaEmpleadoAdministrativo() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -94,7 +95,9 @@ public class BajaEmpleadoAdministrativo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        // TODO add your handling code here:
+MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos();
+menuEmpleadosAdministrativos.setVisible(true);
+this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed
 
     /**
