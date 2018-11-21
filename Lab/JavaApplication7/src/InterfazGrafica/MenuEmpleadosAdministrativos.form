@@ -93,6 +93,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="A&#xf1;adir Empleado"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="a&#xf1;adirempleadoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="listadoempleados">
       <Properties>

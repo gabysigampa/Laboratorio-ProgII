@@ -52,6 +52,11 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
 
         añadirempleado.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         añadirempleado.setText("Añadir Empleado");
+        añadirempleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                añadirempleadoActionPerformed(evt);
+            }
+        });
 
         listadoempleados.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         listadoempleados.setText("Lista de Empleados");
@@ -130,6 +135,12 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
     private void moficarempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moficarempleadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_moficarempleadoActionPerformed
+
+    private void añadirempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirempleadoActionPerformed
+         AñadirEmpleadoAdministrativo añadirEmpleadoAdministrativo = new AñadirEmpleadoAdministrativo();
+         añadirEmpleadoAdministrativo.setVisible(true);
+         this.dispose();
+    }//GEN-LAST:event_añadirempleadoActionPerformed
 
     /**
      * @param args the command line arguments
