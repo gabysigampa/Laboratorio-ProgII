@@ -58,6 +58,11 @@ public class MenuEnfermeros extends javax.swing.JFrame {
 
         listaenfermero.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         listaenfermero.setText("Listar Enfermeros");
+        listaenfermero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaenfermeroActionPerformed(evt);
+            }
+        });
 
         modificarenfermero.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         modificarenfermero.setText("Modificar Enfermero");
@@ -121,6 +126,12 @@ public class MenuEnfermeros extends javax.swing.JFrame {
         agregarEnfermero.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_añadirenfermeroActionPerformed
+
+    private void listaenfermeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaenfermeroActionPerformed
+       ListarEnfermero listarEnfermero =new ListarEnfermero();
+       listarEnfermero.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_listaenfermeroActionPerformed
 
     /**
      * @param args the command line arguments
