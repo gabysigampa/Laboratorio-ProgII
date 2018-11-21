@@ -117,7 +117,9 @@ public class MenuEnfermeros extends javax.swing.JFrame {
     }//GEN-LAST:event_atrasActionPerformed
 
     private void añadirenfermeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirenfermeroActionPerformed
-        // TODO add your handling code here:
+        AgregarEnfermero agregarEnfermero=new AgregarEnfermero();
+        agregarEnfermero.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_añadirenfermeroActionPerformed
 
     /**

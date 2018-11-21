@@ -9,12 +9,12 @@ package InterfazGrafica;
  *
  * @author Braian
  */
-public class AñadirEmpleadoAdministrativo extends javax.swing.JFrame {
+public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
 
     /**
      * Creates new form AñadirEmpleadoAdministrativo
      */
-    public AñadirEmpleadoAdministrativo() {
+    public AgregarEmpleadoAdministrativo() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -144,8 +144,7 @@ public class AñadirEmpleadoAdministrativo extends javax.swing.JFrame {
                                 .addGap(42, 42, 42)
                                 .addComponent(masculino)
                                 .addGap(32, 32, 32)
-                                .addComponent(femenino)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(femenino))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -261,20 +260,21 @@ public class AñadirEmpleadoAdministrativo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AñadirEmpleadoAdministrativo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarEmpleadoAdministrativo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AñadirEmpleadoAdministrativo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarEmpleadoAdministrativo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AñadirEmpleadoAdministrativo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarEmpleadoAdministrativo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AñadirEmpleadoAdministrativo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarEmpleadoAdministrativo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AñadirEmpleadoAdministrativo().setVisible(true);
+                new AgregarEmpleadoAdministrativo().setVisible(true);
             }
         });
     }

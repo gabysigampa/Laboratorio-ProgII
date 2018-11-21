@@ -144,8 +144,8 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
     }//GEN-LAST:event_moficarempleadoActionPerformed
 
     private void añadirempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirempleadoActionPerformed
-         AñadirEmpleadoAdministrativo añadirEmpleadoAdministrativo = new AñadirEmpleadoAdministrativo();
-         añadirEmpleadoAdministrativo.setVisible(true);
+         AgregarEmpleadoAdministrativo agregarEmpleadoAdministrativo = new AgregarEmpleadoAdministrativo();
+         agregarEmpleadoAdministrativo.setVisible(true);
          this.dispose();
     }//GEN-LAST:event_añadirempleadoActionPerformed
 
