@@ -64,6 +64,11 @@ public class MenuDoctores extends javax.swing.JFrame {
 
         listardoctor.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         listardoctor.setText("Listar Doctores");
+        listardoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listardoctorActionPerformed(evt);
+            }
+        });
 
         eliminar.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         eliminar.setText("Dar de Baja a Doctor");
@@ -123,6 +128,12 @@ public class MenuDoctores extends javax.swing.JFrame {
         agregarDoctor.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_agregardoctorActionPerformed
+
+    private void listardoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listardoctorActionPerformed
+       ListarDoctor listarDoctor = new ListarDoctor();
+       listarDoctor.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_listardoctorActionPerformed
 
     /**
      * @param args the command line arguments

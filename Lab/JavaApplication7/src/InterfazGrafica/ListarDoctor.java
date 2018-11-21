@@ -9,12 +9,12 @@ package InterfazGrafica;
  *
  * @author Braian
  */
-public class ListarEnfermero extends javax.swing.JFrame {
+public class ListarDoctor extends javax.swing.JFrame {
 
     /**
-     * Creates new form ListarEnfermero
+     * Creates new form ListarDoctor
      */
-    public ListarEnfermero() {
+    public ListarDoctor() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -30,15 +30,15 @@ public class ListarEnfermero extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listadoenfermero = new javax.swing.JList<>();
+        listadodoctores = new javax.swing.JList<>();
         atras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Bell MT", 0, 24)); // NOI18N
-        jLabel1.setText("Lista de Enfermeros");
+        jLabel1.setText("Listar Doctores");
 
-        jScrollPane1.setViewportView(listadoenfermero);
+        jScrollPane1.setViewportView(listadodoctores);
 
         atras.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         atras.setText("Atras");
@@ -53,13 +53,13 @@ public class ListarEnfermero extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
+                .addGap(219, 219, 219)
                 .addComponent(jLabel1)
-                .addContainerGap(209, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(225, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -70,20 +70,20 @@ public class ListarEnfermero extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(11, 11, 11)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                .addGap(18, 18, 18)
+                .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        MenuEnfermeros menuEnfermeros= new MenuEnfermeros();
-       menuEnfermeros.setVisible(true);
-       this.dispose();
+         MenuDoctores menuDoctores =new MenuDoctores();
+        menuDoctores.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_atrasActionPerformed
 
     /**
@@ -103,20 +103,20 @@ public class ListarEnfermero extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListarEnfermero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarDoctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListarEnfermero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarDoctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListarEnfermero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarDoctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListarEnfermero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarDoctor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListarEnfermero().setVisible(true);
+                new ListarDoctor().setVisible(true);
             }
         });
     }
@@ -125,6 +125,6 @@ public class ListarEnfermero extends javax.swing.JFrame {
     private javax.swing.JButton atras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList<String> listadoenfermero;
+    private javax.swing.JList<String> listadodoctores;
     // End of variables declaration//GEN-END:variables
 }
