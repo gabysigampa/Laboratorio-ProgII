@@ -1,5 +1,6 @@
 
 package InterfazGrafica;
+
 import java.util.ArrayList;
 import java.util.Iterator; // se impoerta clse iterador
 import javaapplication7.Afiliado; // clase afiliado

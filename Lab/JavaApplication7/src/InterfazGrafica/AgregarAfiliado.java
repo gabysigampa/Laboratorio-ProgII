@@ -21,7 +21,7 @@ public class AgregarAfiliado extends javax.swing.JFrame {
         //this.setLocationRelativeTo(null);
     }
     
-    public AgregarAfiliado(Afiliado a, Colecciones e) { //segundo constructor con datos
+    public AgregarAfiliado(Afiliado a,Colecciones e) { //segundo constructor con datos
         
         initComponents();
         afiliado=a;
@@ -322,14 +322,14 @@ public class AgregarAfiliado extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
         /// salimos del menu actual y nos regresamos al menu alterior
         //pero debenmos envias los objetos
-        MenuAfiliado menuafi=new MenuAfiliado(afi, colecciones);
+        MenuAfiliado menuafi=new MenuAfiliado(afiliado,colecciones);
         menuafi.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_agregarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         // TODO add your handling code here:
-        MenuAfiliado menuafi=new MenuAfiliado(afiliado, colecciones);
+        MenuAfiliado menuafi=new MenuAfiliado(afiliado,colecciones);
         menuafi.setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelarActionPerformed

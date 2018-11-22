@@ -8,12 +8,12 @@ import java.util.ArrayList;
  * @author Fernando
  */
 public class Colecciones {
-    private ArrayList<Afiliado> afiliados=new ArrayList<>();
-    private ArrayList<Familiar> familiares=new ArrayList<>();
+    private ArrayList<Afiliado> afiliados=new ArrayList<Afiliado>();
+    private ArrayList<Familiar> familiares=new ArrayList<Familiar>();
     private ArrayList<Doctor> doctores= new ArrayList<>();
     private ArrayList<Enfermero> enfermeros=new ArrayList<>();
     private ArrayList<Chofer> choferes=new ArrayList<>();
-    private ArrayList<Administrativo> administrativos=new ArrayList<>();
+    private ArrayList<Administrativo> administrativos=new ArrayList<Administrativo>();
 
     
     

@@ -18,7 +18,7 @@ public class MenuAfiliado extends javax.swing.JFrame {
     
    
    
-    public MenuAfiliado(Afiliado a, Colecciones e) { //constructor con datos
+    public MenuAfiliado( Afiliado a,Colecciones e) { //constructor con datos
         initComponents();
          afiliado=a;
         colecciones=e;
@@ -163,7 +163,7 @@ public class MenuAfiliado extends javax.swing.JFrame {
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
         // TODO add your handling code here:
-        MenuPrincipal menuprinc=new MenuPrincipal(afiliado, colecciones);
+        MenuPrincipal menuprinc=new MenuPrincipal(afiliado,colecciones);
         menuprinc.setVisible(true);
         dispose();
     }//GEN-LAST:event_atrasActionPerformed

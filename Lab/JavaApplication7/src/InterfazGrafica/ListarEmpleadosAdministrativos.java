@@ -43,15 +43,10 @@ public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(null, "No existen empleados", "Aviso", JOptionPane.INFORMATION_MESSAGE);
     }
-    
-    
-    
-    
-    
-    
-    
-    }
+ }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

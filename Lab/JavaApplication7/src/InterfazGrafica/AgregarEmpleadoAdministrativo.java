@@ -25,9 +25,9 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
         initComponents();
         administrativo =adm;
         colecciones=e;
-        this.setLocationRelativeTo(null);
         setTitle("Añadir Empleado");
         setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     
@@ -279,7 +279,7 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
 
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
 
-        String nom,ape,dnii,dom,tel,sex="sin sexo";
+        String nom,ape,dom,dnii,tel,sex="sin sexo";
         int dia,mes,anio;
         int numemp=0;
         
@@ -299,16 +299,21 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
         anio=Integer.parseInt(añotxt.getText());
         
        Administrativo adminis=new Administrativo(nom,ape,sex, dnii,dom, tel, dia,mes,anio,numemp);
-
-        nombre.setText(null);
+       colecciones.setAdministrativos(adminis);
+       
+       
+       
+       nombre.setText(null);
         apellido.setText(null);
         dni.setText(null);
         telefono.setText(null);
         diatext.setText(null);
         mestxt.setText(null);
         añotxt.setText(null);
-             JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
-          MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
+             
+        JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+          
+        MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
         menuEmpleadosAdministrativos.setVisible(true);
         this.dispose();   
     }//GEN-LAST:event_agregarActionPerformed

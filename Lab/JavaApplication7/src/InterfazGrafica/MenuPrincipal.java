@@ -20,7 +20,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
     
     
-    public MenuPrincipal(Afiliado a, Colecciones e) {           //para afiliados
+    public MenuPrincipal( Afiliado a,Colecciones e) {           //para afiliados
         initComponents();
         
         afiliado=a;
@@ -38,7 +38,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setTitle("Sistema de Emergencia Medica - Menu Principal");
         setResizable(false);
         this.setLocationRelativeTo(null);
-    }
+    }  
     
     
     
@@ -145,7 +145,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void gestionarAfiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarAfiliadoActionPerformed
         // TODO add your handling code here:
-        MenuAfiliado menuaf= new MenuAfiliado(afiliado, colecciones);
+        MenuAfiliado menuaf= new MenuAfiliado(afiliado,colecciones);
         menuaf.setVisible(true);
         dispose();
     }//GEN-LAST:event_gestionarAfiliadoActionPerformed

@@ -21,11 +21,11 @@ public class Main {
         cole.setAfiliados(afiliado);
         
         Administrativo admi2=new Administrativo("braian","salavarria","masculino","38915932","san antonio","000000",10,10,1998,200);
-        cole.setAdministrativos(admin);
+        cole.setAdministrativos(admi2);
         
         
         
-        MenuPrincipal interfaz=new MenuPrincipal(afil, cole);
+        MenuPrincipal interfaz=new MenuPrincipal(afiliado,cole);
         interfaz.setVisible(true);
          
         MenuPrincipal interfaz2=new MenuPrincipal(admi2, cole);

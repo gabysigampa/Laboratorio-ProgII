@@ -23,10 +23,11 @@ public class Administrativo extends Persona{
     }
 
    
+    
     @Override
     public String toString(){
 
-        String administrativo= "Empleado Admnistrativo:  "+getNombre()+"  "+getApellido() +
+        String administrativo= "Empleado Admnistrativo:  "+getNombre()+"  "+getApellido()+
                          "\nSexo:  "+getSexo()+"  "+"\nDni:  "+getDni()+"  "+
                          "\nDomicilio:  "+getDomicilio()+"  "+"\nFecha de Nacimiento:  "+" "+
                          getDiaNac()+" / "+getMesNac()+" / "+getAnioNac()+"\nTelefono:  "+getTelefono();
