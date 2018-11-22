@@ -134,7 +134,7 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        MenuEmpleadosPrincipal menuEmpleadosPrincipal =new MenuEmpleadosPrincipal();
+        MenuEmpleadosPrincipal menuEmpleadosPrincipal =new MenuEmpleadosPrincipal(administrativo,colecciones);
         menuEmpleadosPrincipal.setVisible(true);
         this.dispose();
      
@@ -159,7 +159,7 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
     }//GEN-LAST:event_añadirempleadoActionPerformed
 
     private void eliminarempledoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarempledoActionPerformed
-       BajaEmpleadoAdministrativo bajaEmpleadoAdministrativo = new BajaEmpleadoAdministrativo();
+       BajaEmpleadoAdministrativo bajaEmpleadoAdministrativo = new BajaEmpleadoAdministrativo(administrativo,colecciones);
        bajaEmpleadoAdministrativo.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_eliminarempledoActionPerformed
