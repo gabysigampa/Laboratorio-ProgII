@@ -3,6 +3,7 @@ package InterfazGrafica;
 import javaapplication7.Administrativo;
 import javaapplication7.Afiliado;
 import javaapplication7.Colecciones;
+import javaapplication7.Doctor;
 
 /**
  *
@@ -13,6 +14,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private Colecciones colecciones;
     private Afiliado afiliado;
     private Administrativo administrativo;
+    private Doctor doctor;
     
     public MenuPrincipal() {
         initComponents();
@@ -41,6 +43,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }  
     
     
+    public MenuPrincipal(Doctor d, Colecciones e) {   //para administrativos
+        initComponents();
+        doctor=d;
+        colecciones=e;
+        setTitle("Sistema de Emergencia Medica - Menu Principal");
+        setResizable(false);
+        this.setLocationRelativeTo(null);
+    }  
     
     
     
@@ -162,6 +172,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void gestionarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarEmpleadoActionPerformed
         MenuEmpleadosPrincipal menuempleados =new MenuEmpleadosPrincipal(administrativo,colecciones);//aca debo enviar todos los empleados
         menuempleados.setVisible(true);
+        
+        MenuDoctores menuDoctores=MenuDoctores(doctor,colecciones);
+        menuDoctores.setVisible(true);
+      
+        
         this.dispose();
     }//GEN-LAST:event_gestionarEmpleadoActionPerformed
 
@@ -207,4 +222,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
+
+    private MenuDoctores MenuDoctores(Doctor doctor, Colecciones colecciones) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
