@@ -9,6 +9,7 @@ import java.util.ArrayList;
  */
 public class Colecciones {
     private ArrayList<Afiliado> afiliados=new ArrayList<>();
+    private ArrayList<Familiar> familiares=new ArrayList<>();
     private ArrayList<Doctor> doctores= new ArrayList<>();
     private ArrayList<Enfermero> enfermeros=new ArrayList<>();
     private ArrayList<Chofer> choferes=new ArrayList<>();
@@ -23,6 +24,14 @@ public class Colecciones {
 
     public void setAfiliados(Afiliado afiliado) {
          afiliados.add(afiliado);
+    }
+    
+    public ArrayList<Familiar> getFamiliares(){
+        return familiares;
+    }
+    
+    public void setFamiliares(Familiar familiar){
+        familiares.add(familiar);
     }
     
     public ArrayList<Doctor> getDoctores(){

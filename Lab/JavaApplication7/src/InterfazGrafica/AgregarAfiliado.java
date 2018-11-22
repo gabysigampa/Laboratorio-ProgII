@@ -317,7 +317,7 @@ public class AgregarAfiliado extends javax.swing.JFrame {
         telefono.setText(null);
         fechaDia.setText(null);
         fechaMes.setText(null);
-      fechaAnio.setText(null);
+        fechaAnio.setText(null);
         
         JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
         /// salimos del menu actual y nos regresamos al menu alterior

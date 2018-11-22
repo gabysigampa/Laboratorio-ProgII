@@ -33,7 +33,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="listarafiliados" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="agregarafiliado" min="-2" pref="200" max="-2" attributes="0"/>
-                      <Component id="modificarafiliados" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Component id="gestionarfamiliares" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="eliminarafiliados" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -55,12 +55,18 @@
               <Component id="agregarafiliado" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="listarafiliados" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="modificarafiliados" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="eliminarafiliados" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="atras" min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
+                      <Component id="atras" min="-2" pref="33" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="eliminarafiliados" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="gestionarfamiliares" min="-2" pref="50" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace pref="17" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -78,15 +84,15 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarafiliadoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="modificarafiliados">
+    <Component class="javax.swing.JButton" name="gestionarfamiliares">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Bell MT" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Modificar Afiliado"/>
+        <Property name="text" type="java.lang.String" value="Gestionar Familiares"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modificarafiliadosActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gestionarfamiliaresActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
