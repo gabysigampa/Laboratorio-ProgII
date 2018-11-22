@@ -1,9 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import javaapplication7.Administrativo;
+import javaapplication7.Colecciones;
 
 /**
  *
@@ -11,15 +10,26 @@ package InterfazGrafica;
  */
 public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuEmpleados
-     */
+    private Colecciones colecciones;
+    private Administrativo administrativo;
+    
+    
+    
     public MenuEmpleadosPrincipal() {
-        initComponents();
-        
-        this.setLocationRelativeTo(null);
+        initComponents();   
     }
 
+    public MenuEmpleadosPrincipal(Administrativo adm,Colecciones e){
+        initComponents(); 
+        administrativo=adm;
+        colecciones=e;
+        setTitle("  Gestion de Empleados");
+        setResizable(false);
+        this.setLocationRelativeTo(null);
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -125,7 +135,7 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void empleadosAdministrativosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empleadosAdministrativosActionPerformed
-       MenuEmpleadosAdministrativos empleadosadministrativos = new MenuEmpleadosAdministrativos();
+       MenuEmpleadosAdministrativos empleadosadministrativos = new MenuEmpleadosAdministrativos(administrativo,colecciones);
        empleadosadministrativos.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_empleadosAdministrativosActionPerformed

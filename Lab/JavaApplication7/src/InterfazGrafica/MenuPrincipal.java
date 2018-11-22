@@ -1,5 +1,6 @@
 
 package InterfazGrafica;
+import javaapplication7.Administrativo;
 import javaapplication7.Afiliado;
 import javaapplication7.Colecciones;
 
@@ -11,6 +12,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private Colecciones colecciones;
     private Afiliado afiliado;
+    private Administrativo administrativo;
     
     public MenuPrincipal() {
         initComponents();
@@ -18,15 +20,34 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
     
     
-    public MenuPrincipal(Afiliado a, Colecciones e) {
+    public MenuPrincipal(Afiliado a, Colecciones e) {           //para afiliados
         initComponents();
         
         afiliado=a;
+        colecciones=e;
+        setTitle("Sistema de Emergencia Medica - Menu Principal"); 
+        setResizable(false);
+        this.setLocationRelativeTo(null);
+    }
+    
+    
+    public MenuPrincipal(Administrativo adm, Colecciones e) {   //para administrativos
+        initComponents();
+        administrativo=adm;
         colecciones=e;
         setTitle("Sistema de Emergencia Medica - Menu Principal");
         setResizable(false);
         this.setLocationRelativeTo(null);
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -139,7 +160,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_salirActionPerformed
 
     private void gestionarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarEmpleadoActionPerformed
-        MenuEmpleadosPrincipal menuempleados =new MenuEmpleadosPrincipal();
+        MenuEmpleadosPrincipal menuempleados =new MenuEmpleadosPrincipal(administrativo,colecciones);//aca debo enviar todos los empleados
         menuempleados.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_gestionarEmpleadoActionPerformed

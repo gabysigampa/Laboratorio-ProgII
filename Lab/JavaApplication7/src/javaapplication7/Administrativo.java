@@ -12,16 +12,12 @@ public class Administrativo extends Persona{
     
     public Administrativo(){}
 
-    /**
-     * @return the numEmpleado
-     */
+    
     public Integer getNumEmpleado() {
         return numEmpleado;
     }
 
-    /**
-     * @param numEmpleado the numEmpleado to set
-     */
+    
     public void setNumEmpleado(Integer numEmpleado) {
         this.numEmpleado = numEmpleado;
     }

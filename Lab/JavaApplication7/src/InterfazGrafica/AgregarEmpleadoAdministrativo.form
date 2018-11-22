@@ -50,7 +50,7 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="nombre" min="-2" pref="273" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="apelldio" alignment="1" max="32767" attributes="0"/>
+                          <Component id="apellido" alignment="1" max="32767" attributes="0"/>
                           <Component id="dni" alignment="1" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -58,15 +58,15 @@
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="dia" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="diatext" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="mes" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="mestxt" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="año" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="añotxt" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
@@ -101,7 +101,7 @@
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="apelldio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="apellido" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -117,9 +117,9 @@
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="dia" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="mes" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="año" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="diatext" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="mestxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="añotxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -214,7 +214,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="apelldio">
+    <Component class="javax.swing.JTextField" name="apellido">
     </Component>
     <Component class="javax.swing.JTextField" name="dni">
     </Component>
@@ -244,11 +244,17 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="femeninoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="dia">
+    <Component class="javax.swing.JTextField" name="diatext">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="diatextActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="mes">
+    <Component class="javax.swing.JTextField" name="mestxt">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mestxtActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="a&#xf1;o">
+    <Component class="javax.swing.JTextField" name="a&#xf1;otxt">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">
       <Properties>
@@ -292,6 +298,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

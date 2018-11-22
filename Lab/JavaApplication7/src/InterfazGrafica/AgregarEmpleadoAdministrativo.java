@@ -1,9 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import javaapplication7.Administrativo;
+import javaapplication7.Colecciones;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,14 +11,31 @@ package InterfazGrafica;
  */
 public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AñadirEmpleadoAdministrativo
-     */
+    
+    private Colecciones colecciones;
+    private Administrativo administrativo;
+    
+    
     public AgregarEmpleadoAdministrativo() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        
     }
 
+    public AgregarEmpleadoAdministrativo(Administrativo adm,Colecciones e){
+        initComponents();
+        administrativo =adm;
+        colecciones=e;
+        this.setLocationRelativeTo(null);
+        setTitle("Añadir Empleado");
+        setResizable(false);
+    }
+
+    
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,15 +54,15 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         nombre = new javax.swing.JTextField();
-        apelldio = new javax.swing.JTextField();
+        apellido = new javax.swing.JTextField();
         dni = new javax.swing.JTextField();
         telefono = new javax.swing.JTextField();
         domicilio = new javax.swing.JTextField();
         masculino = new javax.swing.JRadioButton();
         femenino = new javax.swing.JRadioButton();
-        dia = new javax.swing.JTextField();
-        mes = new javax.swing.JTextField();
-        año = new javax.swing.JTextField();
+        diatext = new javax.swing.JTextField();
+        mestxt = new javax.swing.JTextField();
+        añotxt = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -100,6 +117,18 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
             }
         });
 
+        diatext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diatextActionPerformed(evt);
+            }
+        });
+
+        mestxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mestxtActionPerformed(evt);
+            }
+        });
+
         jLabel9.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         jLabel9.setText("Dia");
 
@@ -119,6 +148,11 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
 
         agregar.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         agregar.setText("Agregar");
+        agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,21 +182,21 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(apelldio)
+                            .addComponent(apellido)
                             .addComponent(dni)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(diatext, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(añotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(90, 90, 90))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -188,7 +222,7 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(apelldio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -201,9 +235,9 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(diatext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(añotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
@@ -238,10 +272,54 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
     }//GEN-LAST:event_femeninoActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos();
+        MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
         menuEmpleadosAdministrativos.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed
+
+    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
+
+        String nom,ape,dnii,dom,tel,sex="sin sexo";
+        int dia,mes,anio;
+        int numemp=0;
+        
+        nom=nombre.getText();
+        ape=apellido.getText();
+        dnii=dni.getText();
+        tel=telefono.getText();
+        dom=domicilio.getText();
+        if (femenino.isSelected()){
+                sex = "Femenino";
+            }
+            if (masculino.isSelected()){
+                sex = "Masculino";
+            }
+        dia=Integer.parseInt(diatext.getText());
+        mes=Integer.parseInt(mestxt.getText());
+        anio=Integer.parseInt(añotxt.getText());
+        
+       Administrativo adminis=new Administrativo(nom,ape,sex, dnii,dom, tel, dia,mes,anio,numemp);
+
+        nombre.setText(null);
+        apellido.setText(null);
+        dni.setText(null);
+        telefono.setText(null);
+        diatext.setText(null);
+        mestxt.setText(null);
+        añotxt.setText(null);
+             JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+          MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
+        menuEmpleadosAdministrativos.setVisible(true);
+        this.dispose();   
+    }//GEN-LAST:event_agregarActionPerformed
+
+    private void mestxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mestxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mestxtActionPerformed
+
+    private void diatextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diatextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_diatextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,10 +359,10 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregar;
-    private javax.swing.JTextField apelldio;
-    private javax.swing.JTextField año;
+    private javax.swing.JTextField apellido;
+    private javax.swing.JTextField añotxt;
     private javax.swing.JButton cancelar;
-    private javax.swing.JTextField dia;
+    private javax.swing.JTextField diatext;
     private javax.swing.JTextField dni;
     private javax.swing.JTextField domicilio;
     private javax.swing.JRadioButton femenino;
@@ -300,7 +378,7 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton masculino;
-    private javax.swing.JTextField mes;
+    private javax.swing.JTextField mestxt;
     private javax.swing.JTextField nombre;
     private javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables
