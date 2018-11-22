@@ -1,9 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import javaapplication7.Administrativo;
+import javaapplication7.Colecciones;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,12 +11,23 @@ package InterfazGrafica;
  */
 public class BajaEmpleadoAdministrativo extends javax.swing.JFrame {
 
-    /**
-     * Creates new form BajaEmpleadoAdministrativo
-     */
-    public BajaEmpleadoAdministrativo() {
+   private Colecciones colecciones;
+   private Administrativo administrativo;
+    
+   
+   public BajaEmpleadoAdministrativo(Administrativo adm, Colecciones e){
+       
+       initComponents();
+       administrativo =adm;
+       colecciones=e;
+       setTitle("Bajaa de Empleado Administrativo");
+       setResizable(false);
+       this.setLocationRelativeTo(null);
+   }
+   
+   public BajaEmpleadoAdministrativo() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -42,6 +53,12 @@ public class BajaEmpleadoAdministrativo extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         jLabel2.setText("Ingrese DNI del Empleado");
 
+        ingresodni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ingresodniActionPerformed(evt);
+            }
+        });
+
         cancelar.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         cancelar.setText("Cancelar");
         cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -52,6 +69,11 @@ public class BajaEmpleadoAdministrativo extends javax.swing.JFrame {
 
         aceptar.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         aceptar.setText("Aceptar");
+        aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aceptarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,10 +117,41 @@ public class BajaEmpleadoAdministrativo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos();
+MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
 menuEmpleadosAdministrativos.setVisible(true);
 this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed
+
+    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
+       
+        String dni=ingresodni.getText();
+        Administrativo administrativoBaja=null;
+        
+        for(Administrativo i: colecciones.getAdministrativos()){
+        
+            if(i.getDni().equals(dni)){
+                administrativoBaja=i;
+            }
+        }
+        
+        if(administrativoBaja!=null){
+            colecciones.getAdministrativos().remove(administrativoBaja);
+            JOptionPane.showMessageDialog(null, "Empleado dado de Baja Correctamente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null, "Empleado no Existente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+        
+        MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
+        menuEmpleadosAdministrativos.setVisible(true);
+        this.dispose();
+            
+        
+    }//GEN-LAST:event_aceptarActionPerformed
+
+    private void ingresodniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresodniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ingresodniActionPerformed
 
     /**
      * @param args the command line arguments
