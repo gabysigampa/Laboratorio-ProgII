@@ -152,6 +152,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void asistenciaMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asistenciaMedicaActionPerformed
         // TODO add your handling code here:
+        MenuAsistencias masi= new MenuAsistencias();
+        masi.setVisible(true);
+        dispose();
     }//GEN-LAST:event_asistenciaMedicaActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
