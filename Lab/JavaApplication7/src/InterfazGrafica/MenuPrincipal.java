@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
 import javaapplication7.Afiliado;
 import javaapplication7.Colecciones;
@@ -18,18 +14,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
     
     public MenuPrincipal() {
         initComponents();
-       this.setLocationRelativeTo(null);
+       
     }
     
-    /**
-     * Creates new form MenuPrincipal
-     */
+    
     public MenuPrincipal(Afiliado a, Colecciones e) {
+        initComponents();
+        
         afiliado=a;
         colecciones=e;
         setTitle("Sistema de Emergencia Medica - Menu Principal");
         setResizable(false);
-        initComponents();
         this.setLocationRelativeTo(null);
     }
 

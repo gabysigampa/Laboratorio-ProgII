@@ -16,17 +16,14 @@ public class MenuAfiliado extends javax.swing.JFrame {
         initComponents();
     }
     
-    /**
-     * Creates new form MenuAfiliado
-     */
+   
+   
     public MenuAfiliado(Afiliado a, Colecciones e) {
-        afiliado=a;
-        colecciones=e;
-        setTitle("Menu Afiliado");
-        setResizable(false);
         initComponents();
          afiliado=a;
         colecciones=e;
+        setTitle("Menu Afiliado");
+        setResizable(false);
         this.setLocationRelativeTo(null);
     }
 
@@ -150,7 +147,7 @@ public class MenuAfiliado extends javax.swing.JFrame {
     private void agregarafiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarafiliadoActionPerformed
         // TODO add your handling code here:
         
-        AgregarAfiliado agregarafi=new AgregarAfiliado();
+        AgregarAfiliado agregarafi=new AgregarAfiliado(afiliado,colecciones);
         agregarafi.setVisible(true);
         dispose();
     }//GEN-LAST:event_agregarafiliadoActionPerformed

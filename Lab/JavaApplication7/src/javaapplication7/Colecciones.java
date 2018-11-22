@@ -8,20 +8,21 @@ import java.util.ArrayList;
  * @author Fernando
  */
 public class Colecciones {
-    private ArrayList<Afiliado> afiliados=new ArrayList<>();
+    private ArrayList<Afiliado> afiliados=new ArrayList<Afiliado>();
     private ArrayList<Doctor> doctores= new ArrayList<>();
     private ArrayList<Enfermero> enfermeros=new ArrayList<>();
     private ArrayList<Chofer> choferes=new ArrayList<>();
     private ArrayList<Administrativo> administrativos=new ArrayList<>();
+
     
     
-    
+     
     public ArrayList<Afiliado> getAfiliados() {
         return afiliados;
     }
 
     public void setAfiliados(Afiliado afiliado) {
-        getAfiliados().add(afiliado);
+         afiliados.add(afiliado);
     }
     
     public ArrayList<Doctor> getDoctores(){
@@ -56,5 +57,5 @@ public class Colecciones {
         getAdministrativos().add(admin);
     }
     
-    
+   
 }

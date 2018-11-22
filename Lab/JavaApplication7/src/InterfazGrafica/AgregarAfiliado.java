@@ -1,8 +1,8 @@
 
 package InterfazGrafica;
 
-import javaapplication7.Afiliado;
-import javaapplication7.Colecciones;
+import javaapplication7.Afiliado; // se agrego la clase afiliado
+import javaapplication7.Colecciones;// se agrego la clase colecciones
 import javax.swing.JOptionPane;
 
 
@@ -15,23 +15,19 @@ public class AgregarAfiliado extends javax.swing.JFrame {
     private Colecciones colecciones;
     private Afiliado afiliado;
     
-    public AgregarAfiliado(){
+    public AgregarAfiliado(){ // primer construtor
         initComponents();
         
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
     }
     
-    /**
-     * Creates new form AgregarAfiliado
-     * @param a
-     * @param e
-     */
-    public AgregarAfiliado(Afiliado a, Colecciones e) {
+    public AgregarAfiliado(Afiliado a, Colecciones e) { //segundo constructor
         afiliado=a;
         colecciones=e;
         initComponents();
         setTitle("Agregar Afiliado");
         setResizable(false);
+        this.setLocationRelativeTo(null);
     }
     
   
@@ -288,15 +284,17 @@ public class AgregarAfiliado extends javax.swing.JFrame {
     }//GEN-LAST:event_apellidoActionPerformed
 
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
-        // TODO add your handling code here:
+       
         
-        String nom, ape, dom, sex="";
-        Integer dnii, tel, numaf=10, abon=10, dia, mes, anio;
+        String nom, ape, dom,dnii,tel, sex= ""; // definicion de variables
+        int  numaf=10, abon=10, dia, mes, anio; // definicion de variables
+        
         nom=nombre.getText();
         ape=apellido.getText();
-        dnii=Integer.parseInt(dni.getText());
-        tel=Integer.parseInt(telefono.getText());
+        dnii=dni.getText();
+        tel=telefono.getText();
         dom=domicilio.getText();
+        
         if (femenino.isSelected()){
                 sex = "Femenino";
             }
@@ -306,8 +304,11 @@ public class AgregarAfiliado extends javax.swing.JFrame {
         dia=Integer.parseInt(fechaDia.getText());
         mes=Integer.parseInt(fechaMes.getText());
         anio=Integer.parseInt(fechaAnio.getText());
+        
         Afiliado afi=new Afiliado(nom, ape,sex , dnii, dom, tel,dia, mes,anio, numaf, abon);
         colecciones.setAfiliados(afi);
+        
+       
         nombre.setText(null);
         apellido.setText(null);        
         dni.setText(null);
@@ -315,9 +316,8 @@ public class AgregarAfiliado extends javax.swing.JFrame {
         telefono.setText(null);
         fechaDia.setText(null);
         fechaMes.setText(null);
-       
+      fechaAnio.setText(null);
         
-       fechaAnio.setText(null);
         JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
         
         MenuAfiliado menuafi=new MenuAfiliado(afiliado, colecciones);
