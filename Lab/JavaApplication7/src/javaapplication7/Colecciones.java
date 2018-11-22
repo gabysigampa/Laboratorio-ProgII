@@ -30,7 +30,7 @@ public class Colecciones {
     }
     
     public void setDoctores(Doctor doctor){
-        getDoctores().add(doctor);
+        doctores.add(doctor);
     }
     
     public ArrayList<Enfermero> getEnfermeros(){
@@ -38,7 +38,7 @@ public class Colecciones {
     }
     
     public void setEnfermeros(Enfermero enfermero){
-        getEnfermeros().add(enfermero);
+        enfermeros.add(enfermero);
     }
     
     public ArrayList<Chofer> getChoferes(){
@@ -46,7 +46,7 @@ public class Colecciones {
     }
 
     public void setChoferes(Chofer chofer){
-        getChoferes().add(chofer);
+        choferes.add(chofer);
     }
     
     public ArrayList<Administrativo> getAdministrativos(){
@@ -54,7 +54,7 @@ public class Colecciones {
     }
     
     public void setAdministrativos(Administrativo admin){
-        getAdministrativos().add(admin);
+        administrativos.add(admin);
     }
     
    
