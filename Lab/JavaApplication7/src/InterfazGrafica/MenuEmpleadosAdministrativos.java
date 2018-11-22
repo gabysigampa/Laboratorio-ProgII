@@ -42,7 +42,6 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
         atras = new javax.swing.JButton();
         añadirempleado = new javax.swing.JButton();
         listadoempleados = new javax.swing.JButton();
-        moficarempleado = new javax.swing.JButton();
         eliminarempledo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,14 +74,6 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
             }
         });
 
-        moficarempleado.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        moficarempleado.setText("Modificar Empleado");
-        moficarempleado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moficarempleadoActionPerformed(evt);
-            }
-        });
-
         eliminarempledo.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         eliminarempledo.setText("Dar de Baja Empleado");
         eliminarempledo.addActionListener(new java.awt.event.ActionListener() {
@@ -104,8 +95,7 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(añadirempleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(listadoempleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(moficarempleado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(eliminarempledo, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                    .addComponent(eliminarempledo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE))
                 .addGap(0, 200, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(106, 106, 106)
@@ -122,10 +112,8 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(listadoempleados, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(moficarempleado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
                 .addComponent(eliminarempledo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                 .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
@@ -147,10 +135,6 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
        listarEmpleadosAdministrativos.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_listadoempleadosActionPerformed
-
-    private void moficarempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moficarempleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moficarempleadoActionPerformed
 
     private void añadirempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirempleadoActionPerformed
          AgregarEmpleadoAdministrativo agregarEmpleadoAdministrativo = new AgregarEmpleadoAdministrativo(administrativo,colecciones);
@@ -208,6 +192,5 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
     private javax.swing.JButton eliminarempledo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton listadoempleados;
-    private javax.swing.JButton moficarempleado;
     // End of variables declaration//GEN-END:variables
 }
