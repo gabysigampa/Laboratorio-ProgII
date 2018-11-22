@@ -141,7 +141,7 @@ public class MenuAfiliado extends javax.swing.JFrame {
     }//GEN-LAST:event_listarafiliadosActionPerformed
 
     private void eliminarafiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarafiliadosActionPerformed
-        BajaAfiliado bajaAfiliado=new BajaAfiliado(/*afiliado, colecciones*/);
+        BajaAfiliado bajaAfiliado=new BajaAfiliado(afiliado, colecciones);
         bajaAfiliado.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_eliminarafiliadosActionPerformed

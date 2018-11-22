@@ -1,14 +1,31 @@
 
 package InterfazGrafica;
 
+import javaapplication7.Afiliado;
+import javaapplication7.Colecciones;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Fernando
  */
 public class BajaAfiliado extends javax.swing.JFrame {
 
+    private Colecciones colecciones;
+    private Afiliado afiliado;          // se crean variables
     
-    public BajaAfiliado() {
+   public BajaAfiliado(Afiliado a,Colecciones e){
+       initComponents();
+       
+       afiliado=a;
+       colecciones=e;               //CONSTRUCTOR CON DATOS
+       setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("BAJA DE AFILIADO");
+   }
+    
+    
+    
+    public BajaAfiliado() {     //constructor vacio
         initComponents();
         
     }
@@ -24,7 +41,7 @@ public class BajaAfiliado extends javax.swing.JFrame {
 
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        ingresoDni = new javax.swing.JTextField();
         aceptar = new javax.swing.JToggleButton();
         cancelar = new javax.swing.JToggleButton();
 
@@ -39,9 +56,9 @@ public class BajaAfiliado extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         jLabel1.setText("Ingrese DNI del Afiliado");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        ingresoDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                ingresoDniActionPerformed(evt);
             }
         });
 
@@ -74,7 +91,7 @@ public class BajaAfiliado extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addComponent(jLabel1)
                         .addGap(37, 37, 37)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ingresoDni, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(85, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -91,7 +108,7 @@ public class BajaAfiliado extends javax.swing.JFrame {
                 .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ingresoDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -102,16 +119,34 @@ public class BajaAfiliado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void ingresoDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresoDniActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_ingresoDniActionPerformed
 
     private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
-        // TODO add your handling code here:
+        String dni =ingresoDni.getText();
+        Afiliado AfiliadoBaja=null;
+        
+        for (Afiliado i:colecciones.getAfiliados()){
+                if(i.getDni().equals(dni)){
+                    AfiliadoBaja=i;
+                }
+                    if(AfiliadoBaja!=null){
+                        JOptionPane.showMessageDialog(null, "Afiliado dado de baja correctamente", "Aviso",JOptionPane.INFORMATION_MESSAGE);
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Afiliado no Existente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+                    }
+        }
+                        // regreso al menu de afiliados
+            MenuAfiliado menuafi=new MenuAfiliado(afiliado, colecciones);
+            menuafi.setVisible(true);
+            this.dispose();
     }//GEN-LAST:event_aceptarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        // TODO add your handling code here:
+        MenuAfiliado menuafi=new MenuAfiliado(afiliado, colecciones);
+        menuafi.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed
 
     /**
@@ -152,8 +187,8 @@ public class BajaAfiliado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton aceptar;
     private javax.swing.JToggleButton cancelar;
+    private javax.swing.JTextField ingresoDni;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
