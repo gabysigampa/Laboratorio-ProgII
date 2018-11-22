@@ -15,6 +15,7 @@ public class Doctor extends Persona{
         this.numEmpleado=numEmpleado;
     }
 
+    public Doctor(){};
     
     public String getEspecialidad() {
         return especialidad;
