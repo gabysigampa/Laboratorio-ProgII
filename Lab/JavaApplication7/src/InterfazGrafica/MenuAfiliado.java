@@ -9,16 +9,16 @@ import javaapplication7.Colecciones;
  */
 public class MenuAfiliado extends javax.swing.JFrame {
     
-    private Colecciones colecciones;
+    private Colecciones colecciones; // se crean las variables
     private Afiliado afiliado;
     
-    public MenuAfiliado(){
+    public MenuAfiliado(){ //constructor vacio
         initComponents();
     }
     
    
    
-    public MenuAfiliado(Afiliado a, Colecciones e) {
+    public MenuAfiliado(Afiliado a, Colecciones e) { //constructor con datos
         initComponents();
          afiliado=a;
         colecciones=e;
@@ -145,7 +145,8 @@ public class MenuAfiliado extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminarafiliadosActionPerformed
 
     private void agregarafiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarafiliadoActionPerformed
-        // TODO add your handling code here:
+        //en el menu de agregar afiliados se debe nuevamente
+        //enviar los paremetros al nuevo menu
         
         AgregarAfiliado agregarafi=new AgregarAfiliado(afiliado,colecciones);
         agregarafi.setVisible(true);

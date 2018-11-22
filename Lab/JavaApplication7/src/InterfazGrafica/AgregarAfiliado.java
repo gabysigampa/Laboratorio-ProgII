@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class AgregarAfiliado extends javax.swing.JFrame {
     
-    private Colecciones colecciones;
+    private Colecciones colecciones;        // se crean las variables
     private Afiliado afiliado;
     
     public AgregarAfiliado(){ // primer construtor
@@ -21,10 +21,11 @@ public class AgregarAfiliado extends javax.swing.JFrame {
         //this.setLocationRelativeTo(null);
     }
     
-    public AgregarAfiliado(Afiliado a, Colecciones e) { //segundo constructor
+    public AgregarAfiliado(Afiliado a, Colecciones e) { //segundo constructor con datos
+        
+        initComponents();
         afiliado=a;
         colecciones=e;
-        initComponents();
         setTitle("Agregar Afiliado");
         setResizable(false);
         this.setLocationRelativeTo(null);
@@ -319,8 +320,9 @@ public class AgregarAfiliado extends javax.swing.JFrame {
       fechaAnio.setText(null);
         
         JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
-        
-        MenuAfiliado menuafi=new MenuAfiliado(afiliado, colecciones);
+        /// salimos del menu actual y nos regresamos al menu alterior
+        //pero debenmos envias los objetos
+        MenuAfiliado menuafi=new MenuAfiliado(afi, colecciones);
         menuafi.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_agregarActionPerformed

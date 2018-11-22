@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
 import java.util.ArrayList;
-import java.util.Iterator;
-import javaapplication7.Afiliado;
-import javaapplication7.Colecciones;
+import java.util.Iterator; // se impoerta clse iterador
+import javaapplication7.Afiliado; // clase afiliado
+import javaapplication7.Colecciones; // clase colecciones
 import javax.swing.JOptionPane;
 
 /**
@@ -17,22 +13,18 @@ import javax.swing.JOptionPane;
 public class ListarAfiliados extends javax.swing.JFrame {
 
     private ArrayList<Afiliado> afiliados = new ArrayList<Afiliado>();
-    private Colecciones colecciones;
+    private Colecciones colecciones; // se cran las variables
     private Afiliado afiliado;
     
-    public ListarAfiliados(){
-        initComponents();
-    }
     
-    /**
-     * Creates new form ListarAfiliados
-     */
-    public ListarAfiliados(Afiliado a, Colecciones e) {
+    public ListarAfiliados(Afiliado a, Colecciones e) { // construcor con datos
+       
         afiliado=a;
         colecciones=e;
+         initComponents();
         setTitle("Lista de Afiliados");
         setResizable(false);
-        initComponents();
+        
         if(!colecciones.getAfiliados().isEmpty()) {
             Iterator iterador = colecciones.getAfiliados().listIterator(); 
             while (iterador.hasNext()) {
@@ -42,6 +34,9 @@ public class ListarAfiliados extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No existen afiliados", "ERROR", JOptionPane.INFORMATION_MESSAGE);
         }
         
+    }
+    public ListarAfiliados(){  //  constructor vacio
+        initComponents();
     }
 
     /**
