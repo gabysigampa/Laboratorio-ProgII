@@ -137,11 +137,13 @@ public class MenuAfiliado extends javax.swing.JFrame {
         // TODO add your handling code here:
         ListarAfiliados listaafi=new ListarAfiliados(afiliado, colecciones);
         listaafi.setVisible(true);
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_listarafiliadosActionPerformed
 
     private void eliminarafiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarafiliadosActionPerformed
-        // TODO add your handling code here:
+        BajaAfiliado bajaAfiliado=new BajaAfiliado(/*afiliado, colecciones*/);
+        bajaAfiliado.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_eliminarafiliadosActionPerformed
 
     private void agregarafiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarafiliadoActionPerformed
