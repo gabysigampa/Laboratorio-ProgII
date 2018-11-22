@@ -134,7 +134,7 @@ public class MenuAfiliado extends javax.swing.JFrame {
 
     private void gestionarfamiliaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarfamiliaresActionPerformed
         // TODO add your handling code here:
-        SubmenuAfiliados subafi=new SubmenuAfiliados(afiliado, colecciones);
+        SubmenuAfiliados subafi=new SubmenuAfiliados(afiliado,colecciones);
         subafi.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_gestionarfamiliaresActionPerformed
