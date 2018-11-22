@@ -1,10 +1,14 @@
 
 package javaapplication7;
+import javaapplication7.Familiar;
+import java.util.ArrayList;
 
 public class Afiliado extends Persona{
     private Integer numeroAfiliado;
     private Integer abono;
-    //otro atrubituo para ver familiares asignados a este afiliado
+    //atrubituo para ver familiares asignados a este afiliado
+    private ArrayList<Familiar> familiares=new ArrayList<Familiar>();
+    
     
     public Afiliado(String nombre, String apellido, String sexo, String dni, String domicilio, String telefono, Integer diaNac,Integer mesNac, Integer anioNac, Integer numeroAfiliado, Integer abono){
         super(nombre, apellido, sexo, dni, domicilio, telefono, diaNac, mesNac, anioNac);

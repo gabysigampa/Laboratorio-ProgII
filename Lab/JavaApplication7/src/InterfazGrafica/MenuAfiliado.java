@@ -37,7 +37,7 @@ public class MenuAfiliado extends javax.swing.JFrame {
     private void initComponents() {
 
         agregarafiliado = new javax.swing.JButton();
-        modificarafiliados = new javax.swing.JButton();
+        gestionarfamiliares = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         listarafiliados = new javax.swing.JButton();
         eliminarafiliados = new javax.swing.JButton();
@@ -54,11 +54,11 @@ public class MenuAfiliado extends javax.swing.JFrame {
             }
         });
 
-        modificarafiliados.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        modificarafiliados.setText("Modificar Afiliado");
-        modificarafiliados.addActionListener(new java.awt.event.ActionListener() {
+        gestionarfamiliares.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
+        gestionarfamiliares.setText("Gestionar Familiares");
+        gestionarfamiliares.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificarafiliadosActionPerformed(evt);
+                gestionarfamiliaresActionPerformed(evt);
             }
         });
 
@@ -100,7 +100,7 @@ public class MenuAfiliado extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(listarafiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(agregarafiliado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(modificarafiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(gestionarfamiliares, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(eliminarafiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(200, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -117,21 +117,27 @@ public class MenuAfiliado extends javax.swing.JFrame {
                 .addComponent(agregarafiliado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(listarafiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(modificarafiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(eliminarafiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(181, 181, 181)
+                        .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(eliminarafiliados, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(gestionarfamiliares, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void modificarafiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarafiliadosActionPerformed
+    private void gestionarfamiliaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarfamiliaresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_modificarafiliadosActionPerformed
+        SubmenuAfiliados subafi=new SubmenuAfiliados(afiliado, colecciones);
+        subafi.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_gestionarfamiliaresActionPerformed
 
     private void listarafiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarafiliadosActionPerformed
         // TODO add your handling code here:
@@ -201,8 +207,8 @@ public class MenuAfiliado extends javax.swing.JFrame {
     private javax.swing.JButton agregarafiliado;
     private javax.swing.JButton atras;
     private javax.swing.JButton eliminarafiliados;
+    private javax.swing.JButton gestionarfamiliares;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton listarafiliados;
-    private javax.swing.JButton modificarafiliados;
     // End of variables declaration//GEN-END:variables
 }

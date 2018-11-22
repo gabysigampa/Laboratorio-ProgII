@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package InterfazGrafica;
+import javaapplication7.Afiliado;
+import javaapplication7.Colecciones;
+import javaapplication7.Familiar;
 
 /**
  *
@@ -11,11 +14,21 @@ package InterfazGrafica;
  */
 public class AgregarFamiliar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AgregarFamiliar
-     */
-    public AgregarFamiliar() {
+    private Colecciones colecciones;
+    private Afiliado afiliado;
+   
+    
+    public AgregarFamiliar(Afiliado a, Colecciones c) {
+        afiliado=a;
+        colecciones=c;
         initComponents();
+        setTitle("Agregar Familiar");
+        setResizable(false);
+        this.setLocationRelativeTo(null);
+    }
+
+    private AgregarFamiliar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -288,6 +301,9 @@ public class AgregarFamiliar extends javax.swing.JFrame {
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         // TODO add your handling code here:
+        SubmenuAfiliados subafi= new SubmenuAfiliados(afiliado, colecciones);
+        subafi.setVisible(true);
+        dispose();
     }//GEN-LAST:event_cancelarActionPerformed
 
     /**
