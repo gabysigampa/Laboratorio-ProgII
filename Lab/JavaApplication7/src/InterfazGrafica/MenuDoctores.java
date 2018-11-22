@@ -1,9 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import javaapplication7.Colecciones;
+import javaapplication7.Doctor;
 
 /**
  *
@@ -11,13 +10,24 @@ package InterfazGrafica;
  */
 public class MenuDoctores extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuDoctores
-     */
+    private Colecciones colecciones;
+    private Doctor doctor;
+    
+    
     public MenuDoctores() {
         initComponents();
+    }   
+        
+         public MenuDoctores(Doctor d,Colecciones e) {
+        initComponents();
+        doctor=d;
+        colecciones=e;
         this.setLocationRelativeTo(null);
+        setTitle("Menu Doctores");
+        setResizable(false);
     }
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -129,7 +139,7 @@ public class MenuDoctores extends javax.swing.JFrame {
     }//GEN-LAST:event_atrasActionPerformed
 
     private void agregardoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregardoctorActionPerformed
-        AgregarDoctor agregarDoctor =new AgregarDoctor();
+        AgregarDoctor agregarDoctor =new AgregarDoctor(doctor,colecciones);
         agregarDoctor.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_agregardoctorActionPerformed

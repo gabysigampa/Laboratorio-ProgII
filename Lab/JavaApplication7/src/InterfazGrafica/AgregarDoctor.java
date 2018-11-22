@@ -1,9 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import javaapplication7.Colecciones;
+import javaapplication7.Doctor;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,12 +11,21 @@ package InterfazGrafica;
  */
 public class AgregarDoctor extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AgregarDoctor
-     */
+    private Colecciones colecciones;
+    private Doctor doctor;
+    
+    
+    
+    
     public AgregarDoctor() {
         initComponents();
+    }
+
+    AgregarDoctor(Doctor d, Colecciones e) {
+        initComponents();
         this.setLocationRelativeTo(null);
+        setTitle("Añadir Doctor");
+        setResizable(false);        
     }
 
     /**
@@ -39,18 +48,18 @@ public class AgregarDoctor extends javax.swing.JFrame {
         nombre = new javax.swing.JTextField();
         apellido = new javax.swing.JTextField();
         dni = new javax.swing.JTextField();
-        dia = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        año = new javax.swing.JTextField();
+        diatxt = new javax.swing.JTextField();
+        mestxt = new javax.swing.JTextField();
+        añotxt = new javax.swing.JTextField();
         masculino = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        femenino = new javax.swing.JRadioButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         telefono = new javax.swing.JTextField();
         domicilio = new javax.swing.JTextField();
         cancelar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        agregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,18 +93,23 @@ public class AgregarDoctor extends javax.swing.JFrame {
             }
         });
 
-        dia.setPreferredSize(new java.awt.Dimension(50, 20));
+        diatxt.setPreferredSize(new java.awt.Dimension(50, 20));
+        diatxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                diatxtActionPerformed(evt);
+            }
+        });
 
-        año.setPreferredSize(new java.awt.Dimension(60, 20));
+        añotxt.setPreferredSize(new java.awt.Dimension(60, 20));
 
         masculino.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         masculino.setText("Masculino");
 
-        jRadioButton1.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
-        jRadioButton1.setText("Femenino");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        femenino.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
+        femenino.setText("Femenino");
+        femenino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                femeninoActionPerformed(evt);
             }
         });
 
@@ -108,6 +122,12 @@ public class AgregarDoctor extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         jLabel11.setText("año");
 
+        telefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                telefonoActionPerformed(evt);
+            }
+        });
+
         cancelar.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         cancelar.setText("Cancelar");
         cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -116,8 +136,13 @@ public class AgregarDoctor extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
-        jButton1.setText("Agregar");
+        agregar.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
+        agregar.setText("Agregar");
+        agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,7 +163,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                         .addGap(55, 55, 55)
                         .addComponent(masculino)
                         .addGap(30, 30, 30)
-                        .addComponent(jRadioButton1))
+                        .addComponent(femenino))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -148,15 +173,15 @@ public class AgregarDoctor extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(diatxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(15, 15, 15)
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                                .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(añotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(dni)
                             .addComponent(telefono)
                             .addComponent(domicilio))))
@@ -165,7 +190,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
@@ -185,7 +210,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(masculino)
-                    .addComponent(jRadioButton1))
+                    .addComponent(femenino))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -193,9 +218,9 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(diatxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(añotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
@@ -210,16 +235,16 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void femeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_femeninoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_femeninoActionPerformed
 
     private void dniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dniActionPerformed
         // TODO add your handling code here:
@@ -230,6 +255,59 @@ public class AgregarDoctor extends javax.swing.JFrame {
         menuDoctores.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed
+
+    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
+
+
+        String nom, ape, dom,dnii,tel, sex= "sin sexo",esp="doctor"; // definicion de variables
+        String ne="001";
+         int dia, mes, anio; // definicion de variables
+        
+        nom=nombre.getText();
+        ape=apellido.getText();
+        dnii=dni.getText();
+        tel=telefono.getText();
+        dom=domicilio.getText();
+        
+        if (femenino.isSelected()){
+                sex = "Femenino";
+            }
+            if (masculino.isSelected()){
+                sex = "Masculino";
+            }
+        dia=Integer.parseInt(diatxt.getText());
+        mes=Integer.parseInt(mestxt.getText());
+        anio=Integer.parseInt(añotxt.getText());
+        
+        Doctor doc=new Doctor(nom, ape,sex , dnii, dom, tel,dia, mes,anio, esp,ne );
+        colecciones.setDoctores(doc);
+        
+       
+        nombre.setText(null);
+        apellido.setText(null);        
+        dni.setText(null);
+        domicilio.setText(null);
+        telefono.setText(null);
+        diatxt.setText(null);
+        mestxt.setText(null);
+        añotxt.setText(null);
+        
+        JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+        /// salimos del menu actual y nos regresamos al menu alterior
+        //pero debenmos envias los objetos
+        MenuDoctores menuDoctores=new MenuDoctores(doctor,colecciones);
+        menuDoctores.setVisible(true);
+        this.dispose();
+     
+    }//GEN-LAST:event_agregarActionPerformed
+
+    private void diatxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diatxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_diatxtActionPerformed
+
+    private void telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_telefonoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -267,13 +345,14 @@ public class AgregarDoctor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agregar;
     private javax.swing.JTextField apellido;
-    private javax.swing.JTextField año;
+    private javax.swing.JTextField añotxt;
     private javax.swing.JButton cancelar;
-    private javax.swing.JTextField dia;
+    private javax.swing.JTextField diatxt;
     private javax.swing.JTextField dni;
     private javax.swing.JTextField domicilio;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JRadioButton femenino;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -285,9 +364,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JRadioButton masculino;
+    private javax.swing.JTextField mestxt;
     private javax.swing.JTextField nombre;
     private javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables

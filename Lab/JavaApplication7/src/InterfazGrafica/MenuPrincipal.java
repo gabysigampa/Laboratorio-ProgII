@@ -43,7 +43,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }  
     
     
-    public MenuPrincipal(Doctor d, Colecciones e) {   //para administrativos
+    public MenuPrincipal(Doctor d, Colecciones e) {   //para doctores
         initComponents();
         doctor=d;
         colecciones=e;
@@ -170,6 +170,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_salirActionPerformed
 
     private void gestionarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarEmpleadoActionPerformed
+
+
         MenuEmpleadosPrincipal menuempleados =new MenuEmpleadosPrincipal(administrativo,colecciones);//aca debo enviar todos los empleados
         menuempleados.setVisible(true);
         
@@ -178,6 +180,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
       
         
         this.dispose();
+        
+        
     }//GEN-LAST:event_gestionarEmpleadoActionPerformed
 
     /**

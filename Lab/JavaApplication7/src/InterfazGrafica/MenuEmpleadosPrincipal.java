@@ -3,6 +3,7 @@ package InterfazGrafica;
 
 import javaapplication7.Administrativo;
 import javaapplication7.Colecciones;
+import javaapplication7.Doctor;
 
 /**
  *
@@ -12,7 +13,7 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
 
     private Colecciones colecciones;
     private Administrativo administrativo;
-    
+    private Doctor doctor;
     
     
     public MenuEmpleadosPrincipal() {
@@ -28,6 +29,14 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
+    public MenuEmpleadosPrincipal(Doctor d,Colecciones e){
+        initComponents(); 
+        doctor=d;
+        colecciones=e;
+        setTitle("  Gestion de Empleados");
+        setResizable(false);
+        this.setLocationRelativeTo(null);
+    }
     
     
     /**
@@ -150,7 +159,7 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_atrasActionPerformed
 
     private void doctoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctoresActionPerformed
-        MenuDoctores menuDoctores = new MenuDoctores();
+        MenuDoctores menuDoctores = new MenuDoctores(doctor,colecciones);
         menuDoctores.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_doctoresActionPerformed
