@@ -1,22 +1,55 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import javaapplication7.Administrativo;
+import javaapplication7.Colecciones;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Braian
  */
 public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
-
-    /**
-     * Creates new form ListarEmpleadosAdministrativos
-     */
+    
+    ArrayList<Administrativo>administrativos=new ArrayList<Administrativo>();
+    private Colecciones colecciones;
+    private Administrativo administrativo;
+    
+    
     public ListarEmpleadosAdministrativos() {
         initComponents();
-         this.setLocationRelativeTo(null);
+        
+    }
+
+    ListarEmpleadosAdministrativos(Administrativo adm, Colecciones e) {
+        initComponents();
+        administrativo=adm;
+        colecciones=e;
+         
+        this.setLocationRelativeTo(null);
+         setTitle("Listado de Empleados");
+         setResizable(false);
+   
+    
+    if(!colecciones.getAdministrativos().isEmpty()){
+       Iterator iterador = colecciones.getAdministrativos().listIterator();
+    
+       while(iterador.hasNext()){
+           listaempleados.append(iterador.next()+"\n\n");
+       }
+    }else{
+        
+        JOptionPane.showMessageDialog(null, "No existen empleados", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    
+    
+    
+    
+    
+    
     }
 
     /**
@@ -29,16 +62,14 @@ public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listadoempleaods = new javax.swing.JList<>();
         atras = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listaempleados = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Bell MT", 0, 24)); // NOI18N
         jLabel1.setText("Lista de Empleados Administrativos");
-
-        jScrollPane1.setViewportView(listadoempleaods);
 
         atras.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         atras.setText("Atras");
@@ -48,21 +79,26 @@ public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
             }
         });
 
+        listaempleados.setColumns(20);
+        listaempleados.setRows(5);
+        jScrollPane2.setViewportView(listaempleados);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(126, 126, 126)
-                .addComponent(jLabel1)
-                .addContainerGap(115, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(488, Short.MAX_VALUE)
+                        .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -71,7 +107,7 @@ public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
@@ -81,7 +117,7 @@ public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-         MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos();
+         MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
         menuEmpleadosAdministrativos.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_atrasActionPerformed
@@ -124,7 +160,7 @@ public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atras;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList<String> listadoempleaods;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea listaempleados;
     // End of variables declaration//GEN-END:variables
 }

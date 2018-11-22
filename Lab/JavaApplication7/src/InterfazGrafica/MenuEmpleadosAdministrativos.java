@@ -143,7 +143,7 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
     }//GEN-LAST:event_atrasActionPerformed
 
     private void listadoempleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoempleadosActionPerformed
-       ListarEmpleadosAdministrativos listarEmpleadosAdministrativos=new ListarEmpleadosAdministrativos();
+       ListarEmpleadosAdministrativos listarEmpleadosAdministrativos=new ListarEmpleadosAdministrativos(administrativo,colecciones);
        listarEmpleadosAdministrativos.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_listadoempleadosActionPerformed
