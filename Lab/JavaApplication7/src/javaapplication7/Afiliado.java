@@ -36,9 +36,12 @@ public class Afiliado extends Persona{
 
     @Override
     public String toString(){
-    
-    String afiliado= "afiliado: "+getNombre() +" " +getApellido()+""+getDni ();
-    return afiliado;
-}
+
+        String afiliado= "Afiliado:  "+getNombre()+"  "+getApellido() +
+                         "\nSexo:  "+getSexo()+"  "+"\nDni:  "+getDni()+"  "+
+                         "\nDomicilio:  "+getDomicilio()+"  "+"\nFecha de Nacimiento:  "+" "+
+                         getDiaNac()+" / "+getMesNac()+" / "+getAnioNac()+"\nTelefono:  "+getTelefono();
+                         return afiliado;
+    }
     
 }
