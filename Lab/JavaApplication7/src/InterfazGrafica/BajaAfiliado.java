@@ -1,9 +1,10 @@
 
 package InterfazGrafica;
 
+import javax.swing.JOptionPane;
 import javaapplication7.Afiliado;
 import javaapplication7.Colecciones;
-import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fernando
@@ -14,10 +15,9 @@ public class BajaAfiliado extends javax.swing.JFrame {
     private Afiliado afiliado;          // se crean variables
     
    public BajaAfiliado(Afiliado a,Colecciones e){
-       initComponents();
-       
        afiliado=a;
-       colecciones=e;               //CONSTRUCTOR CON DATOS
+       colecciones=e;  
+       initComponents();//CONSTRUCTOR CON DATOS
        setLocationRelativeTo(null);
         setResizable(false);
         setTitle("BAJA DE AFILIADO");
@@ -131,12 +131,16 @@ public class BajaAfiliado extends javax.swing.JFrame {
                 if(i.getDni().equals(dni)){
                     AfiliadoBaja=i;
                 }
+            }  
                     if(AfiliadoBaja!=null){
+                        colecciones.getAfiliados().remove(AfiliadoBaja);
                         JOptionPane.showMessageDialog(null, "Afiliado dado de baja correctamente", "Aviso",JOptionPane.INFORMATION_MESSAGE);
                     }else{
                         JOptionPane.showMessageDialog(null, "Afiliado no Existente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
                     }
-        }
+                    
+                   
+        
                         // regreso al menu de afiliados
             MenuAfiliado menuafi=new MenuAfiliado(afiliado, colecciones);
             menuafi.setVisible(true);

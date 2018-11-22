@@ -287,7 +287,7 @@ public class AgregarAfiliado extends javax.swing.JFrame {
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
        
         
-        String nom, ape, dom,dnii,tel, sex= ""; // definicion de variables
+        String nom, ape, dom,dnii,tel, sex= "sin sexo"; // definicion de variables
         int  numaf=10, abon=10, dia, mes, anio; // definicion de variables
         
         nom=nombre.getText();
