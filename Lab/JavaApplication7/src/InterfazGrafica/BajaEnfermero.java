@@ -20,7 +20,8 @@ public class BajaEnfermero extends javax.swing.JFrame {
     
     public BajaEnfermero(ColeccionEmpleados e){
         initComponents();
-        setTitle("Baja Enfermero");
+        empleados=e;
+        setTitle("Baja de Enfermero");
         setResizable(false);
          this.setLocationRelativeTo(null);
     }
@@ -130,10 +131,11 @@ public class BajaEnfermero extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Enfermero dado de Baja", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }else{
             JOptionPane.showMessageDialog(null, "No se Encuentra Enfermero", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-        }if(dni==null){
+        }
+            if(dni==null){
                 
                 
-                    JOptionPane.showMessageDialog(null, "No Ingreso DNI, Intente nuevamente", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "No Ingreso DNI, Intente nuevamente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }
        //regresamos al menu anterior
                                                 

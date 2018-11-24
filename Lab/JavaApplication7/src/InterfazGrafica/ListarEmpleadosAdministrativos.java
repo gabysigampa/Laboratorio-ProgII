@@ -26,7 +26,7 @@ public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
         initComponents();
         empleados=e;
         this.setLocationRelativeTo(null);
-         setTitle("Listado de Empleados");
+         setTitle("Lista de Empleados");
          setResizable(false);
    
     

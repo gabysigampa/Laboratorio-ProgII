@@ -20,7 +20,7 @@ public class BajaChofer extends javax.swing.JFrame {
     public BajaChofer(ColeccionEmpleados e){
         initComponents();
         empleados=e;
-        setTitle("Baja Chofer");
+        setTitle("Baja de Chofer");
         setResizable(false);
          this.setLocationRelativeTo(null);
         

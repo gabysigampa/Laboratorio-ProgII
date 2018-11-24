@@ -20,7 +20,8 @@ public class Chofer extends ColeccionEmpleados{
         String chofer= "Chofer:  "+getNombre()+"  "+getApellido()+
                          "\nSexo:  "+getSexo()+"  "+"\nDni:  "+getDni()+"  "+
                          "\nDomicilio:  "+getDomicilio()+"  "+"\nFecha de Nacimiento:  "+" "+
-                         getDiaNac()+" / "+getMesNac()+" / "+getAnioNac()+"\nTelefono:  "+getTelefono();
+                         getDiaNac()+" / "+getMesNac()+" / "+getAnioNac()+"\nTelefono:  "+getTelefono()
+                         + "\nN° de Legajo:  "+nEmp;
                          return chofer;
     }
 }

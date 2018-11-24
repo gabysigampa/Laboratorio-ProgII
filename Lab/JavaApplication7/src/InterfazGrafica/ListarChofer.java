@@ -38,11 +38,8 @@ public class ListarChofer extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(null, "No existen Choferes", "Aviso", JOptionPane.INFORMATION_MESSAGE);
     }
-        //regresamos al menu anterior
         
-        MenuChofer menuChofer =new MenuChofer(empleados);
-        menuChofer.setVisible(true);
-        dispose();
+       
         
     }
     

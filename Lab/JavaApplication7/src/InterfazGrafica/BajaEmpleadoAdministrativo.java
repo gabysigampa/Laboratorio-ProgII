@@ -1,7 +1,7 @@
 
 package InterfazGrafica;
 
-import javaapplication7.Administrativo;
+
 import javaapplication7.ColeccionEmpleados;
 import javax.swing.JOptionPane;
 
@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
 public class BajaEmpleadoAdministrativo extends javax.swing.JFrame {
 
    
-   private Administrativo administrativo;
+ 
    private ColeccionEmpleados empleados;
     
    
    public BajaEmpleadoAdministrativo(ColeccionEmpleados e){
        initComponents();
        empleados=e;
-       setTitle("Bajaa de Empleado Administrativo");
+       setTitle("Baja de Empleado Administrativo");
        setResizable(false);
        this.setLocationRelativeTo(null);
    }
@@ -138,10 +138,11 @@ public class BajaEmpleadoAdministrativo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Empleado dado de Baja", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }else{
             JOptionPane.showMessageDialog(null, "No se Encuentra Empleado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-        }if(dni==null){
+        }
+        if(dni==null){
                 
                 
-                    JOptionPane.showMessageDialog(null, "No Ingreso DNI, Intente nuevamente", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "No Ingreso DNI, Intente nuevamente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
                     
                     }
         

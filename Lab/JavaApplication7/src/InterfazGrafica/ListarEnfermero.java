@@ -23,7 +23,7 @@ public class ListarEnfermero extends javax.swing.JFrame {
     public ListarEnfermero(ColeccionEmpleados e){
         initComponents();
         empleados=e;
-        setTitle("Listar Enfermeros");
+        setTitle("Lista de Enfermeros");
         setResizable(false);
         this.setLocationRelativeTo(null);
     
@@ -38,12 +38,7 @@ public class ListarEnfermero extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(null, "No existen Enfermeros", "Aviso", JOptionPane.INFORMATION_MESSAGE);
     }
-    
-    //regresamos al menu anterior
-      MenuEnfermeros menuEnfermeros= new MenuEnfermeros(empleados);
-       menuEnfermeros.setVisible(true);
-       this.dispose();
-  }
+    }
     
     
     /**

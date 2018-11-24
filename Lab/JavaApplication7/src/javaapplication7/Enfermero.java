@@ -19,8 +19,9 @@ public class Enfermero extends ColeccionEmpleados{
         String enfermero= "Enfermero:  "+getNombre()+"  "+getApellido()+
                          "\nSexo:  "+getSexo()+"  "+"\nDni:  "+getDni()+"  "+
                          "\nDomicilio:  "+getDomicilio()+"  "+"\nFecha de Nacimiento:  "+" "+
-                         getDiaNac()+" / "+getMesNac()+" / "+getAnioNac()+"\nTelefono:  "+getTelefono();
-                         return enfermero;
+                         getDiaNac()+" / "+getMesNac()+" / "+getAnioNac()+"\nTelefono:  "+getTelefono()
+                        + "\nN° de Legajo:  "+nEmp;
+                        return enfermero;
         
         
 }

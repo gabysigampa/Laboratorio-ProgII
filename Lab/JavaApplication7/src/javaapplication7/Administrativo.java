@@ -22,7 +22,8 @@ public class Administrativo extends ColeccionEmpleados{
         String administrativo1= "Empleado Admnistrativo:  "+getNombre()+"  "+getApellido()+
                          "\nSexo:  "+getSexo()+"  "+"\nDni:  "+getDni()+"  "+
                          "\nDomicilio:  "+getDomicilio()+"  "+"\nFecha de Nacimiento:  "+" "+
-                         getDiaNac()+" / "+getMesNac()+" / "+getAnioNac()+"\nTelefono:  "+getTelefono();
+                         getDiaNac()+" / "+getMesNac()+" / "+getAnioNac()+"\nTelefono:  "+getTelefono()
+                         + "\nN° de Legajo:  "+nEmp;
                          return administrativo1;
     }
     
