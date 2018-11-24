@@ -1,9 +1,7 @@
 
 package InterfazGrafica;
 
-import javaapplication7.Administrativo;
-import javaapplication7.Colecciones;
-import javaapplication7.Doctor;
+import javaapplication7.ColeccionEmpleados;
 
 /**
  *
@@ -11,33 +9,23 @@ import javaapplication7.Doctor;
  */
 public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
 
-    private Colecciones colecciones;
-    private Administrativo administrativo;
-    private Doctor doctor;
+   
+    private ColeccionEmpleados empleados;
     
     
     public MenuEmpleadosPrincipal() {
         initComponents();   
     }
 
-    public MenuEmpleadosPrincipal(Administrativo adm,Colecciones e){
+    public MenuEmpleadosPrincipal(ColeccionEmpleados e){
         initComponents(); 
-        administrativo=adm;
-        colecciones=e;
+        empleados=e;
         setTitle("  Gestion de Empleados");
         setResizable(false);
         this.setLocationRelativeTo(null);
     }
     
-    public MenuEmpleadosPrincipal(Doctor d,Colecciones e){
-        initComponents(); 
-        doctor=d;
-        colecciones=e;
-        setTitle("  Gestion de Empleados");
-        setResizable(false);
-        this.setLocationRelativeTo(null);
-    }
-    
+   
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -145,27 +133,30 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
 
     private void empleadosAdministrativosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empleadosAdministrativosActionPerformed
 
-        MenuEmpleadosAdministrativos empleadosadministrativos = new MenuEmpleadosAdministrativos(administrativo,colecciones);
-       empleadosadministrativos.setVisible(true);
+       MenuEmpleadosAdministrativos empleadosadministrativos = new MenuEmpleadosAdministrativos(empleados);
        
+       empleadosadministrativos.setVisible(true);
        this.dispose();
        
     }//GEN-LAST:event_empleadosAdministrativosActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        MenuPrincipal menuPrincipal= new MenuPrincipal();
+        
+        MenuPrincipal menuPrincipal= new MenuPrincipal(empleados);
         menuPrincipal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_atrasActionPerformed
 
     private void doctoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctoresActionPerformed
-        MenuDoctores menuDoctores = new MenuDoctores(doctor,colecciones);
+        
+        MenuDoctores menuDoctores = new MenuDoctores(empleados);
         menuDoctores.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_doctoresActionPerformed
 
     private void enfermerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enfermerosActionPerformed
-    MenuEnfermeros menuEnfermeros= new MenuEnfermeros();
+   
+    MenuEnfermeros menuEnfermeros= new MenuEnfermeros(empleados);
     menuEnfermeros.setVisible(true);
     this.dispose();
         

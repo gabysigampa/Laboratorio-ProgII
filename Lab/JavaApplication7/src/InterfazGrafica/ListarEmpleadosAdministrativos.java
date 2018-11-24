@@ -1,10 +1,9 @@
 
 package InterfazGrafica;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import javaapplication7.Administrativo;
-import javaapplication7.Colecciones;
+import javaapplication7.ColeccionEmpleados;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,9 +12,9 @@ import javax.swing.JOptionPane;
  */
 public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
     
-    ArrayList<Administrativo>administrativos=new ArrayList<Administrativo>();
-    private Colecciones colecciones;
-    private Administrativo administrativo;
+
+   
+    private ColeccionEmpleados empleados;
     
     
     public ListarEmpleadosAdministrativos() {
@@ -23,18 +22,16 @@ public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
         
     }
 
-    ListarEmpleadosAdministrativos(Administrativo adm, Colecciones e) {
+    ListarEmpleadosAdministrativos(ColeccionEmpleados e) {
         initComponents();
-        administrativo=adm;
-        colecciones=e;
-         
+        empleados=e;
         this.setLocationRelativeTo(null);
          setTitle("Listado de Empleados");
          setResizable(false);
    
     
-    if(!colecciones.getAdministrativos().isEmpty()){
-       Iterator iterador = colecciones.getAdministrativos().listIterator();
+    if(!empleados.getAdministrativos().isEmpty()){
+       Iterator iterador = empleados.getAdministrativos().listIterator();
     
        while(iterador.hasNext()){
            listaempleados.append(iterador.next()+"\n\n");
@@ -45,6 +42,9 @@ public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
     }
  }
 
+    
+    
+    
     
     
     /**
@@ -112,7 +112,7 @@ public class ListarEmpleadosAdministrativos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-         MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
+         MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(empleados);
         menuEmpleadosAdministrativos.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_atrasActionPerformed

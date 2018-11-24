@@ -1,8 +1,7 @@
 
 package InterfazGrafica;
 
-import javaapplication7.Afiliado; // se agrego la clase afiliado
-import javaapplication7.Colecciones;// se agrego la clase colecciones
+import javaapplication7.Afiliado; // se agrego la clase afiliado// se agrego la clase colecciones
 import javax.swing.JOptionPane;
 
 
@@ -12,20 +11,19 @@ import javax.swing.JOptionPane;
  */
 public class AgregarAfiliado extends javax.swing.JFrame {
     
-    private Colecciones colecciones;        // se crean las variables
+                                                // se crean las variables
     private Afiliado afiliado;
     
     public AgregarAfiliado(){ // primer construtor
         initComponents();
         
-        //this.setLocationRelativeTo(null);
+       
     }
     
-    public AgregarAfiliado(Afiliado a,Colecciones e) { //segundo constructor con datos
+    public AgregarAfiliado(Afiliado a) { //segundo constructor con datos
         
         initComponents();
         afiliado=a;
-        colecciones=e;
         setTitle("Agregar Afiliado");
         setResizable(false);
         this.setLocationRelativeTo(null);
@@ -33,10 +31,7 @@ public class AgregarAfiliado extends javax.swing.JFrame {
     
   
 
-    //public AgregarAfiliado(Afiliado afil, Colecciones cole) {
-     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
-
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -286,7 +281,7 @@ public class AgregarAfiliado extends javax.swing.JFrame {
 
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
        
-        
+       /* 
         String nom, ape, dom,dnii,tel, sex= "sin sexo"; // definicion de variables
         int  numaf=10, abon=10, dia, mes, anio; // definicion de variables
         
@@ -322,14 +317,15 @@ public class AgregarAfiliado extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
         /// salimos del menu actual y nos regresamos al menu alterior
         //pero debenmos envias los objetos
-        MenuAfiliado menuafi=new MenuAfiliado(afiliado,colecciones);
+        */
+        MenuAfiliado menuafi=new MenuAfiliado();
         menuafi.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_agregarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         // TODO add your handling code here:
-        MenuAfiliado menuafi=new MenuAfiliado(afiliado,colecciones);
+        MenuAfiliado menuafi=new MenuAfiliado();
         menuafi.setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelarActionPerformed

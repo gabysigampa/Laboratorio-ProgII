@@ -2,7 +2,7 @@
 package InterfazGrafica;
 
 import javaapplication7.Administrativo;
-import javaapplication7.Colecciones;
+import javaapplication7.ColeccionEmpleados;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,15 +11,14 @@ import javax.swing.JOptionPane;
  */
 public class BajaEmpleadoAdministrativo extends javax.swing.JFrame {
 
-   private Colecciones colecciones;
+   
    private Administrativo administrativo;
+   private ColeccionEmpleados empleados;
     
    
-   public BajaEmpleadoAdministrativo(Administrativo adm, Colecciones e){
-       
+   public BajaEmpleadoAdministrativo(ColeccionEmpleados e){
        initComponents();
-       administrativo =adm;
-       colecciones=e;
+       empleados=e;
        setTitle("Bajaa de Empleado Administrativo");
        setResizable(false);
        this.setLocationRelativeTo(null);
@@ -27,9 +26,7 @@ public class BajaEmpleadoAdministrativo extends javax.swing.JFrame {
    
    public BajaEmpleadoAdministrativo() {
         initComponents();
-        
-    }
-
+   }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -117,40 +114,48 @@ public class BajaEmpleadoAdministrativo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
-menuEmpleadosAdministrativos.setVisible(true);
-this.dispose();
+
+        MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(empleados);
+        menuEmpleadosAdministrativos.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
-       
-        String dni=ingresodni.getText();
-        Administrativo administrativoBaja=null;
+
+                // BAJA DE EMPLEADO
         
-        for(Administrativo i: colecciones.getAdministrativos()){
+        String dni= ingresodni.getText();
+        ColeccionEmpleados bajaEmpleado;
+        bajaEmpleado= null;
         
-            if(i.getDni().equals(dni)){
-                administrativoBaja=i;
-            }
+        for(ColeccionEmpleados i: empleados.getAdministrativos()){
+            if(i.getDni().equals(dni))
+                bajaEmpleado=i;
         }
         
-        if(administrativoBaja!=null){
-            colecciones.getAdministrativos().remove(administrativoBaja);
-            JOptionPane.showMessageDialog(null, "Empleado dado de Baja Correctamente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        if(bajaEmpleado!=null){
+            empleados.getAdministrativos().remove(bajaEmpleado);
+            JOptionPane.showMessageDialog(null, "Empleado dado de Baja", "Aviso", JOptionPane.INFORMATION_MESSAGE);
         }else{
-            JOptionPane.showMessageDialog(null, "Empleado no Existente", "Aviso", JOptionPane.INFORMATION_MESSAGE);
-        }
+            JOptionPane.showMessageDialog(null, "No se Encuentra Empleado", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }if(dni==null){
+                
+                
+                    JOptionPane.showMessageDialog(null, "No Ingreso DNI, Intente nuevamente", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    }
         
+        // REGRESAMOS AL MENU ANTERIOR
         
-        MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
+        MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(empleados);
         menuEmpleadosAdministrativos.setVisible(true);
         this.dispose();
-            
         
     }//GEN-LAST:event_aceptarActionPerformed
 
     private void ingresodniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresodniActionPerformed
-        // TODO add your handling code here:
+
+    // TODO add your handling code here:
     }//GEN-LAST:event_ingresodniActionPerformed
 
     /**

@@ -1,9 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import java.util.Iterator;
+import javaapplication7.ColeccionEmpleados;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,14 +11,42 @@ package InterfazGrafica;
  */
 public class ListarEnfermero extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ListarEnfermero
-     */
+    private ColeccionEmpleados empleados;
+    
+    
+    
     public ListarEnfermero() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
     }
 
+    public ListarEnfermero(ColeccionEmpleados e){
+        initComponents();
+        empleados=e;
+        setTitle("Listar Enfermeros");
+        setResizable(false);
+        this.setLocationRelativeTo(null);
+    
+    
+     if(!empleados.getEnfermeros().isEmpty()){
+       Iterator iterador = empleados.getEnfermeros().listIterator();
+    
+       while(iterador.hasNext()){
+           listaenfermero.append(iterador.next()+"\n\n");
+       }
+    }else{
+        
+        JOptionPane.showMessageDialog(null, "No existen Enfermeros", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    //regresamos al menu anterior
+      MenuEnfermeros menuEnfermeros= new MenuEnfermeros(empleados);
+       menuEnfermeros.setVisible(true);
+       this.dispose();
+    
+  }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,16 +57,14 @@ public class ListarEnfermero extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listadoenfermero = new javax.swing.JList<>();
         atras = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listaenfermero = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Bell MT", 0, 24)); // NOI18N
         jLabel1.setText("Lista de Enfermeros");
-
-        jScrollPane1.setViewportView(listadoenfermero);
 
         atras.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         atras.setText("Atras");
@@ -48,21 +74,26 @@ public class ListarEnfermero extends javax.swing.JFrame {
             }
         });
 
+        listaenfermero.setColumns(20);
+        listaenfermero.setRows(5);
+        jScrollPane2.setViewportView(listaenfermero);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(jLabel1)
-                .addContainerGap(209, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(488, Short.MAX_VALUE)
+                        .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -71,8 +102,8 @@ public class ListarEnfermero extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
         );
@@ -81,7 +112,7 @@ public class ListarEnfermero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        MenuEnfermeros menuEnfermeros= new MenuEnfermeros();
+        MenuEnfermeros menuEnfermeros= new MenuEnfermeros(empleados);
        menuEnfermeros.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_atrasActionPerformed
@@ -124,7 +155,7 @@ public class ListarEnfermero extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton atras;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList<String> listadoenfermero;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea listaenfermero;
     // End of variables declaration//GEN-END:variables
 }

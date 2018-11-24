@@ -23,6 +23,7 @@ public abstract class Persona {
            this.mesNac=mesNac;
            this.anioNac=anioNac;
        }
+      
        
        public Persona(){}
 

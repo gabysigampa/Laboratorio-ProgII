@@ -1,9 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import javaapplication7.ColeccionEmpleados;
+import javaapplication7.Enfermero;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,13 +11,27 @@ package InterfazGrafica;
  */
 public class AgregarEnfermero extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AñadirEnfermero
-     */
+    private ColeccionEmpleados empleados;
+    private Enfermero enfermero;
+    
     public AgregarEnfermero() {
         initComponents();
+        //this.setLocationRelativeTo(null);
+    }
+    
+    
+    public AgregarEnfermero(ColeccionEmpleados e){
+        
+        initComponents();
+        empleados=e;
+        setTitle("Agregar Enfermero");
+        setResizable(false);
         this.setLocationRelativeTo(null);
     }
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,17 +54,19 @@ public class AgregarEnfermero extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         dni = new javax.swing.JTextField();
-        dia = new javax.swing.JTextField();
+        diatxt = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        mes = new javax.swing.JTextField();
+        mestxt = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        año = new javax.swing.JTextField();
+        añotxt = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         telefono = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         domicilio = new javax.swing.JTextField();
         cancelar = new javax.swing.JButton();
         agregar = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        nlegajo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,9 +113,9 @@ public class AgregarEnfermero extends javax.swing.JFrame {
             }
         });
 
-        dia.addActionListener(new java.awt.event.ActionListener() {
+        diatxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                diaActionPerformed(evt);
+                diatxtActionPerformed(evt);
             }
         });
 
@@ -131,11 +147,25 @@ public class AgregarEnfermero extends javax.swing.JFrame {
 
         agregar.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         agregar.setText("Agregar");
+        agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
+        jLabel12.setText("N° de Legajo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,36 +189,33 @@ public class AgregarEnfermero extends javax.swing.JFrame {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(domicilio)
-                                    .addComponent(telefono)
-                                    .addComponent(apellido)
-                                    .addComponent(nombre)
-                                    .addComponent(dni)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(24, 24, 24)
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel9)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(año, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(domicilio)
+                                        .addComponent(telefono)
+                                        .addComponent(apellido)
+                                        .addComponent(nombre)
+                                        .addComponent(dni)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel6)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(diatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(24, 24, 24)
+                                            .addComponent(jLabel8)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jLabel9)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(añotxt, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)))
+                                    .addComponent(nlegajo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(91, 91, 91))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
                             .addComponent(jLabel11)
                             .addComponent(jLabel10))
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,11 +244,11 @@ public class AgregarEnfermero extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel5)
-                    .addComponent(dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(diatxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
-                    .addComponent(año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(añotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
@@ -230,7 +257,11 @@ public class AgregarEnfermero extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(domicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(nlegajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -252,19 +283,66 @@ public class AgregarEnfermero extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dniActionPerformed
 
-    private void diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaActionPerformed
+    private void diatxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diatxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_diaActionPerformed
+    }//GEN-LAST:event_diatxtActionPerformed
 
     private void domicilioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_domicilioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_domicilioActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-       MenuEnfermeros menuEnfermeros= new MenuEnfermeros();
+       MenuEnfermeros menuEnfermeros= new MenuEnfermeros(empleados);
        menuEnfermeros.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed
+
+    private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
+
+      String nom,ape,dom,dnii,tel,sex="sin sexo",esp="enfermero";
+        int dia,mes,anio;
+        String numemp;
+        String estad="activo";
+        
+        nom=nombre.getText();
+        ape=apellido.getText();
+        dnii=dni.getText();
+        tel=telefono.getText();
+        dom=domicilio.getText();
+        if (femenino.isSelected()){
+                sex = "Femenino";
+            }
+            if (masculino.isSelected()){
+                sex = "Masculino";
+            }
+        dia=Integer.parseInt(diatxt.getText());
+        mes=Integer.parseInt(mestxt.getText());
+        anio=Integer.parseInt(añotxt.getText());
+        numemp=nlegajo.getText();
+        
+       Enfermero enferm=new Enfermero(nom,ape,sex, dnii,dom, tel, dia,mes,anio,esp,numemp,estad);
+       empleados.setEnfermeros(enferm);
+       
+       
+       
+       nombre.setText(null);
+        apellido.setText(null);
+        dni.setText(null);
+        telefono.setText(null);
+        diatxt.setText(null);
+        mestxt.setText(null);
+        añotxt.setText(null);
+        nlegajo.setText(null);
+             
+        JOptionPane.showMessageDialog(null, "Enfermero Registrado Correctamente", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+          
+        
+       // regresamos al menu anterior
+        
+       MenuEnfermeros menuEnfermeros= new MenuEnfermeros(empleados);
+       menuEnfermeros.setVisible(true);
+       this.dispose();    
+    }//GEN-LAST:event_agregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,15 +383,16 @@ public class AgregarEnfermero extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregar;
     private javax.swing.JTextField apellido;
-    private javax.swing.JTextField año;
+    private javax.swing.JTextField añotxt;
     private javax.swing.JButton cancelar;
-    private javax.swing.JTextField dia;
+    private javax.swing.JTextField diatxt;
     private javax.swing.JTextField dni;
     private javax.swing.JTextField domicilio;
     private javax.swing.JRadioButton femenino;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -323,7 +402,8 @@ public class AgregarEnfermero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton masculino;
-    private javax.swing.JTextField mes;
+    private javax.swing.JTextField mestxt;
+    private javax.swing.JTextField nlegajo;
     private javax.swing.JTextField nombre;
     private javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables

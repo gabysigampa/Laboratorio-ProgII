@@ -6,7 +6,7 @@
 package InterfazGrafica;
 
 import javaapplication7.Afiliado;
-import javaapplication7.Colecciones;
+import javaapplication7.ColeccionEmpleados;
 import javax.swing.JOptionPane;
 import java.util.Iterator;
 
@@ -16,10 +16,10 @@ import java.util.Iterator;
  */
 public class DniFamiliar extends javax.swing.JFrame {
 
-    private Colecciones colecciones;
+    private ColeccionEmpleados colecciones;
     private Afiliado afiliado;
     
-    public DniFamiliar(Afiliado a, Colecciones c) {
+    public DniFamiliar(Afiliado a, ColeccionEmpleados c) {
         afiliado=a;
         colecciones=c;
         initComponents();

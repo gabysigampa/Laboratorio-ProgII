@@ -1,8 +1,7 @@
 
 package InterfazGrafica;
 
-import javaapplication7.Colecciones;
-import javaapplication7.Doctor;
+import javaapplication7.ColeccionEmpleados;
 
 /**
  *
@@ -10,18 +9,17 @@ import javaapplication7.Doctor;
  */
 public class MenuDoctores extends javax.swing.JFrame {
 
-    private Colecciones colecciones;
-    private Doctor doctor;
+    private ColeccionEmpleados empleados;
+   
     
     
     public MenuDoctores() {
         initComponents();
     }   
         
-         public MenuDoctores(Doctor d,Colecciones e) {
+         public MenuDoctores(ColeccionEmpleados e) {
         initComponents();
-        doctor=d;
-        colecciones=e;
+        empleados=e;
         this.setLocationRelativeTo(null);
         setTitle("Menu Doctores");
         setResizable(false);
@@ -42,7 +40,6 @@ public class MenuDoctores extends javax.swing.JFrame {
         atras = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         agregardoctor = new javax.swing.JButton();
-        modificardoctor = new javax.swing.JButton();
         listardoctor = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
 
@@ -68,9 +65,6 @@ public class MenuDoctores extends javax.swing.JFrame {
                 agregardoctorActionPerformed(evt);
             }
         });
-
-        modificardoctor.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        modificardoctor.setText("Modificar Doctor");
 
         listardoctor.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         listardoctor.setText("Listar Doctores");
@@ -104,10 +98,9 @@ public class MenuDoctores extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(200, 200, 200)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(modificardoctor, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(agregardoctor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(listardoctor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))))
                 .addContainerGap(200, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -120,10 +113,8 @@ public class MenuDoctores extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(listardoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(modificardoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
                 .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(109, 109, 109)
                 .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
         );
@@ -133,25 +124,25 @@ public class MenuDoctores extends javax.swing.JFrame {
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
      
-     MenuEmpleadosPrincipal menuEmpleadosPrincipal = new MenuEmpleadosPrincipal();
+     MenuEmpleadosPrincipal menuEmpleadosPrincipal = new MenuEmpleadosPrincipal(empleados);
      menuEmpleadosPrincipal.setVisible(true);
      this.dispose();
     }//GEN-LAST:event_atrasActionPerformed
 
     private void agregardoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregardoctorActionPerformed
-        AgregarDoctor agregarDoctor =new AgregarDoctor(doctor,colecciones);
+        AgregarDoctor agregarDoctor =new AgregarDoctor(empleados);
         agregarDoctor.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_agregardoctorActionPerformed
 
     private void listardoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listardoctorActionPerformed
-       ListarDoctor listarDoctor = new ListarDoctor();
+       ListarDoctor listarDoctor = new ListarDoctor(empleados);
        listarDoctor.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_listardoctorActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-      BajaDoctor bajaDoctor = new BajaDoctor();
+      BajaDoctor bajaDoctor = new BajaDoctor(empleados);
       bajaDoctor.setVisible(true);
       this.dispose();
     }//GEN-LAST:event_eliminarActionPerformed
@@ -198,6 +189,5 @@ public class MenuDoctores extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JButton listardoctor;
-    private javax.swing.JButton modificardoctor;
     // End of variables declaration//GEN-END:variables
 }

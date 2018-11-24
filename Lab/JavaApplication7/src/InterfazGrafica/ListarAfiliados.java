@@ -3,8 +3,7 @@ package InterfazGrafica;
 
 import java.util.ArrayList;
 import java.util.Iterator; // se impoerta clse iterador
-import javaapplication7.Afiliado; // clase afiliado
-import javaapplication7.Colecciones; // clase colecciones
+import javaapplication7.Afiliado; // clase afiliaods
 import javax.swing.JOptionPane;
 
 /**
@@ -14,11 +13,10 @@ import javax.swing.JOptionPane;
 public class ListarAfiliados extends javax.swing.JFrame {
 
     private ArrayList<Afiliado> afiliados = new ArrayList<Afiliado>();
-    private Colecciones colecciones; // se cran las variables
     private Afiliado afiliado;
     
     
-    public ListarAfiliados(Afiliado a, Colecciones e) { // construcor con datos
+    /*public ListarAfiliados(Afiliado a, ColeccionEmpleados e) { // construcor con datos
        
         afiliado=a;
         colecciones=e;
@@ -35,7 +33,8 @@ public class ListarAfiliados extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No existen afiliados", "ERROR", JOptionPane.INFORMATION_MESSAGE);
         }
         
-    }
+    }*/
+      
     public ListarAfiliados(){  //  constructor vacio
         initComponents();
     }
@@ -108,7 +107,7 @@ public class ListarAfiliados extends javax.swing.JFrame {
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
         // TODO add your handling code here:
-        MenuAfiliado menuafi=new MenuAfiliado(afiliado, colecciones);
+        MenuAfiliado menuafi=new MenuAfiliado();
         menuafi.setVisible(true);
         dispose();
     }//GEN-LAST:event_atrasActionPerformed

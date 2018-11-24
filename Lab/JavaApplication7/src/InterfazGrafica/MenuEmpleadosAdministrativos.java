@@ -1,8 +1,8 @@
-
 package InterfazGrafica;
 
-import javaapplication7.Administrativo;
-import javaapplication7.Colecciones;
+
+import javaapplication7.ColeccionEmpleados;
+
 
 /**
  *
@@ -10,25 +10,25 @@ import javaapplication7.Colecciones;
  */
 public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
 
-    private Colecciones colecciones;
-    private Administrativo administrativo;
+   
+    private ColeccionEmpleados empleados;
+
     
     
     public MenuEmpleadosAdministrativos() {
         initComponents();
     }
-    
-    
-    public MenuEmpleadosAdministrativos(Administrativo adm,Colecciones e){
-        initComponents();
-        administrativo=adm;
-        colecciones=e;
-        this.setLocationRelativeTo(null);
-        setTitle("Gestion de Empleados");
-        setResizable(false);
+    public MenuEmpleadosAdministrativos(ColeccionEmpleados e){
         
+        initComponents();
+        empleados=e;
+        setTitle("Menu Empleados Administrativos");
+        setResizable(false);
+        this.setLocationRelativeTo(null);
+       
     }
-
+    
+/*
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -122,7 +122,7 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-        MenuEmpleadosPrincipal menuEmpleadosPrincipal =new MenuEmpleadosPrincipal(administrativo,colecciones);
+        MenuEmpleadosPrincipal menuEmpleadosPrincipal =new MenuEmpleadosPrincipal(empleados);
         menuEmpleadosPrincipal.setVisible(true);
         this.dispose();
      
@@ -131,19 +131,19 @@ public class MenuEmpleadosAdministrativos extends javax.swing.JFrame {
     }//GEN-LAST:event_atrasActionPerformed
 
     private void listadoempleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listadoempleadosActionPerformed
-       ListarEmpleadosAdministrativos listarEmpleadosAdministrativos=new ListarEmpleadosAdministrativos(administrativo,colecciones);
+       ListarEmpleadosAdministrativos listarEmpleadosAdministrativos=new ListarEmpleadosAdministrativos(empleados);
        listarEmpleadosAdministrativos.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_listadoempleadosActionPerformed
 
     private void añadirempleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirempleadoActionPerformed
-         AgregarEmpleadoAdministrativo agregarEmpleadoAdministrativo = new AgregarEmpleadoAdministrativo(administrativo,colecciones);
+         AgregarEmpleadoAdministrativo agregarEmpleadoAdministrativo = new AgregarEmpleadoAdministrativo(empleados);
          agregarEmpleadoAdministrativo.setVisible(true);
          this.dispose();
     }//GEN-LAST:event_añadirempleadoActionPerformed
 
     private void eliminarempledoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarempledoActionPerformed
-       BajaEmpleadoAdministrativo bajaEmpleadoAdministrativo = new BajaEmpleadoAdministrativo(administrativo,colecciones);
+       BajaEmpleadoAdministrativo bajaEmpleadoAdministrativo = new BajaEmpleadoAdministrativo(empleados);
        bajaEmpleadoAdministrativo.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_eliminarempledoActionPerformed

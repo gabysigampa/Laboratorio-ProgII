@@ -1,9 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import java.util.Iterator;
+import javaapplication7.ColeccionEmpleados;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,13 +11,34 @@ package InterfazGrafica;
  */
 public class ListarDoctor extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ListarDoctor
-     */
+    ColeccionEmpleados empleados;
+  
+    
+    
     public ListarDoctor() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        
     }
+        
+        public ListarDoctor(ColeccionEmpleados e){
+            initComponents();
+            empleados=e;
+            setTitle("Lista de Doctores");
+            setResizable(false);
+            this.setLocationRelativeTo(null);
+            
+        if(!empleados.getDoctores().isEmpty()){
+       Iterator iterador = empleados.getDoctores().listIterator();
+    
+       while(iterador.hasNext()){
+           listadoc.append(iterador.next()+"\n\n");
+       }
+    }else{
+        
+        JOptionPane.showMessageDialog(null, "No existen empleados", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+    }
+ }    
+        
 
     
 
@@ -31,16 +52,14 @@ public class ListarDoctor extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listadodoctores = new javax.swing.JList<>();
         atras = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listadoc = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Bell MT", 0, 24)); // NOI18N
         jLabel1.setText("Listar Doctores");
-
-        jScrollPane1.setViewportView(listadodoctores);
 
         atras.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         atras.setText("Atras");
@@ -50,21 +69,26 @@ public class ListarDoctor extends javax.swing.JFrame {
             }
         });
 
+        listadoc.setColumns(20);
+        listadoc.setRows(5);
+        jScrollPane1.setViewportView(listadoc);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(219, 219, 219)
-                .addComponent(jLabel1)
-                .addContainerGap(225, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap(488, Short.MAX_VALUE)
+                        .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -72,18 +96,18 @@ public class ListarDoctor extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1)
-                .addGap(11, 11, 11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-         MenuDoctores menuDoctores =new MenuDoctores();
+         MenuDoctores menuDoctores =new MenuDoctores(empleados);
         menuDoctores.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_atrasActionPerformed
@@ -127,6 +151,6 @@ public class ListarDoctor extends javax.swing.JFrame {
     private javax.swing.JButton atras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList<String> listadodoctores;
+    private javax.swing.JTextArea listadoc;
     // End of variables declaration//GEN-END:variables
 }

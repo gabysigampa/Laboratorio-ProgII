@@ -10,30 +10,24 @@ public class Main {
 
     public static void main(String[] args) {
         
-        Colecciones cole= new Colecciones();
+        ColeccionEmpleados cole= new ColeccionEmpleados();
         
-        Afiliado afil=new Afiliado();
-        Administrativo admin=new Administrativo();
-       Doctor doctor=new Doctor();
+        
          
+      
         
-        Afiliado afiliado = new Afiliado("Jose","Perez","Masculino","383455555" ,"Calle falsa 123","298222", 0, 0,8,5,1998);
-        cole.setAfiliados(afiliado);
+       Administrativo admin=new Administrativo("braian","salavarria","masculino","38915932","san antonio","000000",10,10,1998,"empleado","0001","activo");
+        cole.setAdministrativos(admin);
         
-        Administrativo admi2=new Administrativo("braian","salavarria","masculino","38915932","san antonio","000000",10,10,1998,200);
-        cole.setAdministrativos(admi2);
-        
-        Doctor doc=new Doctor("manuel","aguirrez","masculino","300006897","cordova svc","0800",12,12,1956,"doctor","0012");
+        Doctor doc=new Doctor("manuel","aguirrez","masculino","300006897","cordova svc","0800",12,12,1956,"doctor","0012","activo");
         cole.setDoctores(doc);
         
-        MenuPrincipal interfaz=new MenuPrincipal(afiliado,cole);
+        Enfermero enf=new   Enfermero("samuel","romero","masculino","300006897","cordova svc","0800",12,12,1956,"enfermero","0012","activo");
+        cole.setEnfermeros(enf);
+        
+        MenuPrincipal interfaz=new MenuPrincipal(cole);
         interfaz.setVisible(true);
          
-        MenuPrincipal interfaz2=new MenuPrincipal(admi2, cole);
-         interfaz.setVisible(true);
-        
-        MenuPrincipal interfaz3=new MenuPrincipal(doc,cole);
-        interfaz.setVisible(true);
          
          
          

@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import javaapplication7.ColeccionEmpleados;
 
 /**
  *
@@ -11,13 +9,21 @@ package InterfazGrafica;
  */
 public class MenuEnfermeros extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuEnfermeros
-     */
+       private ColeccionEmpleados empleados;
+     
     public MenuEnfermeros() {
         initComponents();
+       // this.setLocationRelativeTo(null);
+    }
+    
+    public MenuEnfermeros(ColeccionEmpleados e){
+        initComponents();
+        empleados=e;
+        setTitle("Menu Doctor");
+        setResizable(false);
         this.setLocationRelativeTo(null);
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,7 +38,6 @@ public class MenuEnfermeros extends javax.swing.JFrame {
         atras = new javax.swing.JButton();
         añadirenfermero = new javax.swing.JButton();
         listaenfermero = new javax.swing.JButton();
-        modificarenfermero = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,9 +69,6 @@ public class MenuEnfermeros extends javax.swing.JFrame {
             }
         });
 
-        modificarenfermero.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        modificarenfermero.setText("Modificar Enfermero");
-
         eliminar.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         eliminar.setText("Dar de Baja Enfermero");
         eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +86,6 @@ public class MenuEnfermeros extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(añadirenfermero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(listaenfermero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(modificarenfermero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -106,13 +107,11 @@ public class MenuEnfermeros extends javax.swing.JFrame {
                 .addComponent(añadirenfermero, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(listaenfermero, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(modificarenfermero, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(89, 89, 89)
                 .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -120,20 +119,20 @@ public class MenuEnfermeros extends javax.swing.JFrame {
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
     
-     MenuEmpleadosPrincipal menuEmpleadosPrincipal = new MenuEmpleadosPrincipal();
+     MenuEmpleadosPrincipal menuEmpleadosPrincipal = new MenuEmpleadosPrincipal(empleados);
      menuEmpleadosPrincipal.setVisible(true);
      this.dispose();
         
     }//GEN-LAST:event_atrasActionPerformed
 
     private void añadirenfermeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_añadirenfermeroActionPerformed
-        AgregarEnfermero agregarEnfermero=new AgregarEnfermero();
+        AgregarEnfermero agregarEnfermero=new AgregarEnfermero(empleados);
         agregarEnfermero.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_añadirenfermeroActionPerformed
 
     private void listaenfermeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaenfermeroActionPerformed
-       ListarEnfermero listarEnfermero =new ListarEnfermero();
+       ListarEnfermero listarEnfermero =new ListarEnfermero(empleados);
        listarEnfermero.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_listaenfermeroActionPerformed
@@ -185,6 +184,5 @@ public class MenuEnfermeros extends javax.swing.JFrame {
     private javax.swing.JButton eliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton listaenfermero;
-    private javax.swing.JButton modificarenfermero;
     // End of variables declaration//GEN-END:variables
 }

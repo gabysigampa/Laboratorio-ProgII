@@ -28,7 +28,6 @@
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="añadirenfermero" max="32767" attributes="0"/>
                   <Component id="listaenfermero" max="32767" attributes="0"/>
-                  <Component id="modificarenfermero" max="32767" attributes="0"/>
                   <Component id="eliminar" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -57,13 +56,11 @@
               <Component id="añadirenfermero" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="listaenfermero" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Component id="modificarenfermero" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="eliminar" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
               <Component id="atras" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace pref="16" max="32767" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -109,14 +106,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listaenfermeroActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="modificarenfermero">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Bell MT" size="18" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Modificar Enfermero"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="eliminar">
       <Properties>

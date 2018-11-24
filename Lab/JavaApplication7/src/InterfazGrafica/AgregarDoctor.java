@@ -1,7 +1,7 @@
 
 package InterfazGrafica;
 
-import javaapplication7.Colecciones;
+import javaapplication7.ColeccionEmpleados;
 import javaapplication7.Doctor;
 import javax.swing.JOptionPane;
 
@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  */
 public class AgregarDoctor extends javax.swing.JFrame {
 
-    private Colecciones colecciones;
+    private ColeccionEmpleados empleados;
     private Doctor doctor;
     
     
@@ -21,8 +21,9 @@ public class AgregarDoctor extends javax.swing.JFrame {
         initComponents();
     }
 
-    AgregarDoctor(Doctor d, Colecciones e) {
+    AgregarDoctor(ColeccionEmpleados e) {
         initComponents();
+        empleados=e;
         this.setLocationRelativeTo(null);
         setTitle("Añadir Doctor");
         setResizable(false);        
@@ -60,6 +61,8 @@ public class AgregarDoctor extends javax.swing.JFrame {
         domicilio = new javax.swing.JTextField();
         cancelar = new javax.swing.JButton();
         agregar = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        nlegajo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -144,54 +147,61 @@ public class AgregarDoctor extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
+        jLabel12.setText("N° de Legajo");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(masculino)
-                        .addGap(30, 30, 30)
-                        .addComponent(femenino))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nombre)
-                            .addComponent(jLabel1)
-                            .addComponent(apellido)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(diatxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15)
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(añotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(dni)
-                            .addComponent(telefono)
-                            .addComponent(domicilio))))
-                .addContainerGap(107, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel12)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel5))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addComponent(masculino)
+                                .addGap(30, 30, 30)
+                                .addComponent(femenino))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(nombre)
+                                    .addComponent(jLabel1)
+                                    .addComponent(apellido)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(diatxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(15, 15, 15)
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(añotxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(dni)
+                                    .addComponent(telefono)
+                                    .addComponent(domicilio)
+                                    .addComponent(nlegajo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,7 +242,11 @@ public class AgregarDoctor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(domicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(nlegajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -251,7 +265,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
     }//GEN-LAST:event_dniActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        MenuDoctores menuDoctores =new MenuDoctores();
+        MenuDoctores menuDoctores =new MenuDoctores(empleados);
         menuDoctores.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed
@@ -259,16 +273,16 @@ public class AgregarDoctor extends javax.swing.JFrame {
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
 
 
-        String nom, ape, dom,dnii,tel, sex= "sin sexo",esp="doctor"; // definicion de variables
-        String ne="001";
-         int dia, mes, anio; // definicion de variables
+        String nom,ape,dom,dnii,tel,sex="sin sexo",esp="doctor";
+        int dia,mes,anio;
+        String numemp;
+        String estad="activo";
         
         nom=nombre.getText();
         ape=apellido.getText();
         dnii=dni.getText();
         tel=telefono.getText();
         dom=domicilio.getText();
-        
         if (femenino.isSelected()){
                 sex = "Femenino";
             }
@@ -278,24 +292,26 @@ public class AgregarDoctor extends javax.swing.JFrame {
         dia=Integer.parseInt(diatxt.getText());
         mes=Integer.parseInt(mestxt.getText());
         anio=Integer.parseInt(añotxt.getText());
-        
-        Doctor doc=new Doctor(nom, ape,sex , dnii, dom, tel,dia, mes,anio, esp,ne );
-        colecciones.setDoctores(doc);
-        
+        numemp=nlegajo.getText();
        
-        nombre.setText(null);
-        apellido.setText(null);        
+        Doctor doc=new Doctor(nom,ape,sex, dnii,dom, tel, dia,mes,anio,esp,numemp,estad);
+       empleados.setDoctores(doc);
+       
+       
+       
+       nombre.setText(null);
+        apellido.setText(null);
         dni.setText(null);
-        domicilio.setText(null);
         telefono.setText(null);
         diatxt.setText(null);
         mestxt.setText(null);
         añotxt.setText(null);
+        nlegajo.setText(null);
+       
         
-        JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Doctor Registrado Correctamente", "aviso", JOptionPane.INFORMATION_MESSAGE);
         /// salimos del menu actual y nos regresamos al menu alterior
-        //pero debenmos envias los objetos
-        MenuDoctores menuDoctores=new MenuDoctores(doctor,colecciones);
+        MenuDoctores menuDoctores=new MenuDoctores(empleados);
         menuDoctores.setVisible(true);
         this.dispose();
      
@@ -356,6 +372,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -366,6 +383,7 @@ public class AgregarDoctor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton masculino;
     private javax.swing.JTextField mestxt;
+    private javax.swing.JTextField nlegajo;
     private javax.swing.JTextField nombre;
     private javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables

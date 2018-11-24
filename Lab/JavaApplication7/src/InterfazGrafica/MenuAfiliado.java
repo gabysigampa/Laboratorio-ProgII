@@ -2,14 +2,14 @@
 package InterfazGrafica;
 
 import javaapplication7.Afiliado;
-import javaapplication7.Colecciones;
+
 /**
  *
  * @author Fernando
  */
 public class MenuAfiliado extends javax.swing.JFrame {
     
-    private Colecciones colecciones; // se crean las variables
+     // se crean las variables
     private Afiliado afiliado;
     
     public MenuAfiliado(){ //constructor vacio
@@ -18,10 +18,10 @@ public class MenuAfiliado extends javax.swing.JFrame {
     
    
    
-    public MenuAfiliado( Afiliado a,Colecciones e) { //constructor con datos
+    public MenuAfiliado( Afiliado a) { //constructor con datos
         initComponents();
          afiliado=a;
-        colecciones=e;
+       
         setTitle("Menu Afiliado");
         setResizable(false);
         this.setLocationRelativeTo(null);
@@ -134,20 +134,20 @@ public class MenuAfiliado extends javax.swing.JFrame {
 
     private void gestionarfamiliaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarfamiliaresActionPerformed
         // TODO add your handling code here:
-        SubmenuAfiliados subafi=new SubmenuAfiliados(afiliado,colecciones);
+        SubmenuAfiliados subafi=new SubmenuAfiliados();
         subafi.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_gestionarfamiliaresActionPerformed
 
     private void listarafiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarafiliadosActionPerformed
         // TODO add your handling code here:
-        ListarAfiliados listaafi=new ListarAfiliados(afiliado, colecciones);
+        ListarAfiliados listaafi=new ListarAfiliados();
         listaafi.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_listarafiliadosActionPerformed
 
     private void eliminarafiliadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarafiliadosActionPerformed
-        BajaAfiliado bajaAfiliado=new BajaAfiliado(afiliado, colecciones);
+        BajaAfiliado bajaAfiliado=new BajaAfiliado();
         bajaAfiliado.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_eliminarafiliadosActionPerformed
@@ -156,14 +156,14 @@ public class MenuAfiliado extends javax.swing.JFrame {
         //en el menu de agregar afiliados se debe nuevamente
         //enviar los paremetros al nuevo menu
         
-        AgregarAfiliado agregarafi=new AgregarAfiliado(afiliado,colecciones);
+        AgregarAfiliado agregarafi=new AgregarAfiliado();
         agregarafi.setVisible(true);
         dispose();
     }//GEN-LAST:event_agregarafiliadoActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
         // TODO add your handling code here:
-        MenuPrincipal menuprinc=new MenuPrincipal(afiliado,colecciones);
+        MenuPrincipal menuprinc=new MenuPrincipal();
         menuprinc.setVisible(true);
         dispose();
     }//GEN-LAST:event_atrasActionPerformed

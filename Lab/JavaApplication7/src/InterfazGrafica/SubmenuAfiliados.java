@@ -6,7 +6,7 @@
 package InterfazGrafica;
 
 import javaapplication7.Afiliado;
-import javaapplication7.Colecciones;
+import javaapplication7.ColeccionEmpleados;
 
 /**
  *
@@ -15,9 +15,9 @@ import javaapplication7.Colecciones;
 public class SubmenuAfiliados extends javax.swing.JFrame {
 
     private Afiliado afiliado;
-    private Colecciones colecciones;
+    private ColeccionEmpleados colecciones;
     
-    public SubmenuAfiliados(Afiliado a, Colecciones c) {
+    public SubmenuAfiliados(Afiliado a, ColeccionEmpleados c) {
         afiliado=a;
         colecciones=c;
         initComponents();

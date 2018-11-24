@@ -1,9 +1,8 @@
 
 package InterfazGrafica;
-import javaapplication7.Administrativo;
-import javaapplication7.Afiliado;
-import javaapplication7.Colecciones;
-import javaapplication7.Doctor;
+
+
+import javaapplication7.ColeccionEmpleados;
 
 /**
  *
@@ -11,10 +10,7 @@ import javaapplication7.Doctor;
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
-    private Colecciones colecciones;
-    private Afiliado afiliado;
-    private Administrativo administrativo;
-    private Doctor doctor;
+    private ColeccionEmpleados empleados;
     
     public MenuPrincipal() {
         initComponents();
@@ -22,42 +18,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
     
     
-    public MenuPrincipal( Afiliado a,Colecciones e) {           //para afiliados
-        initComponents();
+    public MenuPrincipal( ColeccionEmpleados e) {           //para empleadps
         
-        afiliado=a;
-        colecciones=e;
-        setTitle("Sistema de Emergencia Medica - Menu Principal"); 
+        initComponents();
+         empleados=e;
+        
+         setTitle("Sistema de Emergencia Medica - Menu Principal"); 
         setResizable(false);
         this.setLocationRelativeTo(null);
     }
-    
-    
-    public MenuPrincipal(Administrativo adm, Colecciones e) {   //para administrativos
-        initComponents();
-        administrativo=adm;
-        colecciones=e;
-        setTitle("Sistema de Emergencia Medica - Menu Principal");
-        setResizable(false);
-        this.setLocationRelativeTo(null);
-    }  
-    
-    
-    public MenuPrincipal(Doctor d, Colecciones e) {   //para doctores
-        initComponents();
-        doctor=d;
-        colecciones=e;
-        setTitle("Sistema de Emergencia Medica - Menu Principal");
-        setResizable(false);
-        this.setLocationRelativeTo(null);
-    }  
-    
-    
-    
-    
-    
-    
-    
+       
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -155,7 +126,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void gestionarAfiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarAfiliadoActionPerformed
         // TODO add your handling code here:
-        MenuAfiliado menuaf= new MenuAfiliado(afiliado,colecciones);
+        MenuAfiliado menuaf= new MenuAfiliado();
         menuaf.setVisible(true);
         dispose();
     }//GEN-LAST:event_gestionarAfiliadoActionPerformed
@@ -173,15 +144,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_salirActionPerformed
 
     private void gestionarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gestionarEmpleadoActionPerformed
-
-
-        MenuEmpleadosPrincipal menuempleados =new MenuEmpleadosPrincipal(administrativo,colecciones);//aca debo enviar todos los empleados
+        MenuEmpleadosPrincipal menuempleados =new MenuEmpleadosPrincipal(empleados);// se envian todos los empleados
         menuempleados.setVisible(true);
-        
-        MenuDoctores menuDoctores=MenuDoctores(doctor,colecciones);
-        menuDoctores.setVisible(true);
-      
-        
         this.dispose();
         
         
@@ -230,7 +194,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 
-    private MenuDoctores MenuDoctores(Doctor doctor, Colecciones colecciones) {
+    private MenuDoctores MenuDoctores() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

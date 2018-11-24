@@ -5,7 +5,7 @@
  */
 package InterfazGrafica;
 import javaapplication7.Afiliado;
-import javaapplication7.Colecciones;
+import javaapplication7.ColeccionEmpleados;
 import javaapplication7.Familiar;
 
 /**
@@ -14,11 +14,11 @@ import javaapplication7.Familiar;
  */
 public class AgregarFamiliar extends javax.swing.JFrame {
 
-    private Colecciones colecciones;
+    private ColeccionEmpleados colecciones;
     private Afiliado afiliado;
    
     
-    public AgregarFamiliar(Afiliado a, Colecciones c) {
+    public AgregarFamiliar(Afiliado a, ColeccionEmpleados c) {
         afiliado=a;
         colecciones=c;
         initComponents();

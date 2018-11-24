@@ -2,7 +2,7 @@
 package InterfazGrafica;
 
 import javaapplication7.Administrativo;
-import javaapplication7.Colecciones;
+import javaapplication7.ColeccionEmpleados;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,8 +12,9 @@ import javax.swing.JOptionPane;
 public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
 
     
-    private Colecciones colecciones;
+    
     private Administrativo administrativo;
+    private ColeccionEmpleados empleados;
     
     
     public AgregarEmpleadoAdministrativo() {
@@ -21,20 +22,16 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
         
     }
 
-    public AgregarEmpleadoAdministrativo(Administrativo adm,Colecciones e){
+    AgregarEmpleadoAdministrativo(ColeccionEmpleados e) {
         initComponents();
-        administrativo =adm;
-        colecciones=e;
+        empleados =e;
         setTitle("Añadir Empleado");
         setResizable(false);
         this.setLocationRelativeTo(null);
+    
     }
 
-    
-    
-    
-    
-    
+
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -68,6 +65,8 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         cancelar = new javax.swing.JButton();
         agregar = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        nlegajo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -154,50 +153,13 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
+        jLabel12.setText("N° de Legajo");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(telefono, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(domicilio, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(masculino)
-                                .addGap(32, 32, 32)
-                                .addComponent(femenino))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(apellido)
-                            .addComponent(dni)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(diatext, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(añotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(90, 90, 90))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -209,6 +171,52 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(diatext, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mestxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(añotxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(masculino)
+                                .addGap(32, 32, 32)
+                                .addComponent(femenino))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nombre, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(telefono)
+                                    .addComponent(domicilio)
+                                    .addComponent(apellido, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(dni, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(nlegajo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(90, 90, 90))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +257,11 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(domicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(nlegajo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -272,16 +284,17 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
     }//GEN-LAST:event_femeninoActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
+        MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(empleados);
         menuEmpleadosAdministrativos.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed
 
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
 
-        String nom,ape,dom,dnii,tel,sex="sin sexo";
+     String nom,ape,dom,dnii,tel,sex="sin sexo",esp="empleado administrativo";
         int dia,mes,anio;
-        int numemp=0;
+        String numemp;
+        String estad="activo";
         
         nom=nombre.getText();
         ape=apellido.getText();
@@ -297,9 +310,9 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
         dia=Integer.parseInt(diatext.getText());
         mes=Integer.parseInt(mestxt.getText());
         anio=Integer.parseInt(añotxt.getText());
-        
-       Administrativo adminis=new Administrativo(nom,ape,sex, dnii,dom, tel, dia,mes,anio,numemp);
-       colecciones.setAdministrativos(adminis);
+        numemp=nlegajo.getText();
+       Administrativo adminis=new Administrativo(nom,ape,sex, dnii,dom, tel, dia,mes,anio,esp,numemp,estad);
+       empleados.setAdministrativos(adminis);
        
        
        
@@ -310,12 +323,16 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
         diatext.setText(null);
         mestxt.setText(null);
         añotxt.setText(null);
+        nlegajo.setText(null);
              
-        JOptionPane.showMessageDialog(null, "Afiliado guardado", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Empleado Registrado Correctamente", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
           
-        MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(administrativo,colecciones);
+        MenuEmpleadosAdministrativos menuEmpleadosAdministrativos =new MenuEmpleadosAdministrativos(empleados);
         menuEmpleadosAdministrativos.setVisible(true);
+    
         this.dispose();   
+        
+        
     }//GEN-LAST:event_agregarActionPerformed
 
     private void mestxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mestxtActionPerformed
@@ -374,6 +391,7 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -384,6 +402,7 @@ public class AgregarEmpleadoAdministrativo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JRadioButton masculino;
     private javax.swing.JTextField mestxt;
+    private javax.swing.JTextField nlegajo;
     private javax.swing.JTextField nombre;
     private javax.swing.JTextField telefono;
     // End of variables declaration//GEN-END:variables

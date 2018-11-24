@@ -3,7 +3,7 @@ package InterfazGrafica;
 
 import javax.swing.JOptionPane;
 import javaapplication7.Afiliado;
-import javaapplication7.Colecciones;
+import javaapplication7.ColeccionEmpleados;
 
 /**
  *
@@ -11,18 +11,18 @@ import javaapplication7.Colecciones;
  */
 public class BajaAfiliado extends javax.swing.JFrame {
 
-    private Colecciones colecciones;
+    ;
     private Afiliado afiliado;          // se crean variables
     
-   public BajaAfiliado(Afiliado a,Colecciones e){
+   /*public BajaAfiliado(){
        afiliado=a;
-       colecciones=e;  
+      
        initComponents();//CONSTRUCTOR CON DATOS
        setLocationRelativeTo(null);
         setResizable(false);
         setTitle("BAJA DE AFILIADO");
    }
-    
+    */
     
     
     public BajaAfiliado() {     //constructor vacio
@@ -124,6 +124,7 @@ public class BajaAfiliado extends javax.swing.JFrame {
     }//GEN-LAST:event_ingresoDniActionPerformed
 
     private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
+      /*
         String dni =ingresoDni.getText();
         Afiliado AfiliadoBaja=null;
         
@@ -141,14 +142,14 @@ public class BajaAfiliado extends javax.swing.JFrame {
                     
                    
         
-                        // regreso al menu de afiliados
-            MenuAfiliado menuafi=new MenuAfiliado(afiliado, colecciones);
+              */          // regreso al menu de afiliados
+            MenuAfiliado menuafi=new MenuAfiliado();
             menuafi.setVisible(true);
             this.dispose();
     }//GEN-LAST:event_aceptarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        MenuAfiliado menuafi=new MenuAfiliado(afiliado, colecciones);
+        MenuAfiliado menuafi=new MenuAfiliado();
         menuafi.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed

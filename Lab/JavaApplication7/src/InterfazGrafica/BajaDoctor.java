@@ -5,6 +5,9 @@
  */
 package InterfazGrafica;
 
+import javaapplication7.ColeccionEmpleados;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -12,12 +15,21 @@ package InterfazGrafica;
  */
 public class BajaDoctor extends javax.swing.JFrame {
 
-    /**
-     * Creates new form BajaDoctor
-     */
-    public BajaDoctor() {
+    ColeccionEmpleados empleados;
+    
+    
+    public BajaDoctor(){
         initComponents();
+    }
+    
+    
+    public BajaDoctor(ColeccionEmpleados e) {
+        initComponents();
+            empleados=e;
            this.setLocationRelativeTo(null);
+           setTitle("Baja de Doctor");
+           setResizable(false);
+           
     }
 
     
@@ -44,6 +56,12 @@ public class BajaDoctor extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         jLabel2.setText("Ingrese DNI de Doctor");
+
+        ingresodni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ingresodniActionPerformed(evt);
+            }
+        });
 
         cancelar.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         cancelar.setText("Cancelar");
@@ -103,7 +121,34 @@ public class BajaDoctor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
-        // TODO add your handling code here:
+        
+        
+        String dni= ingresodni.getText();
+        ColeccionEmpleados bajaDoctor;
+        bajaDoctor= null;
+   
+        
+        for(ColeccionEmpleados i: empleados.getDoctores()){
+            if(i.getDni().equals(dni))
+                bajaDoctor=i;
+        }
+        
+        if(bajaDoctor!=null){
+            empleados.getDoctores().remove(bajaDoctor);
+            JOptionPane.showMessageDialog(null, "Doctor dado de Baja", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null, "No se Encuentra Doctor", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }if(dni==null){
+                
+                
+                    JOptionPane.showMessageDialog(null, "No Ingreso DNI, Intente nuevamente", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    }
+        // regresamos al menu anterior
+        MenuDoctores menuDoctores =new MenuDoctores(empleados);
+        menuDoctores.setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_aceptarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
@@ -111,6 +156,10 @@ public class BajaDoctor extends javax.swing.JFrame {
         menuDoctores.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed
+
+    private void ingresodniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresodniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ingresodniActionPerformed
 
     /**
      * @param args the command line arguments
