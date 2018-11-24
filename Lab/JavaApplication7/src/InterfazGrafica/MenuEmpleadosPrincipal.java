@@ -164,7 +164,7 @@ public class MenuEmpleadosPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_enfermerosActionPerformed
 
     private void choferesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_choferesActionPerformed
-       MenuChofer menuChofer =new MenuChofer();
+       MenuChofer menuChofer =new MenuChofer(empleados);
        menuChofer.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_choferesActionPerformed

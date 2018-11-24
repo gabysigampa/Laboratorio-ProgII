@@ -25,6 +25,9 @@ public class Main {
         Enfermero enf=new   Enfermero("samuel","romero","masculino","300006897","cordova svc","0800",12,12,1956,"enfermero","0012","activo");
         cole.setEnfermeros(enf);
         
+        Chofer chof=new Chofer("miguel","fadel","masculino","300006897","guemes","0800",12,12,1956,"chofer","0012","activo");
+        cole.setChoferes(chof);
+        
         MenuPrincipal interfaz=new MenuPrincipal(cole);
         interfaz.setVisible(true);
          

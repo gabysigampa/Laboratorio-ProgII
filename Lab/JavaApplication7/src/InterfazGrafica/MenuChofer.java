@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import javaapplication7.ColeccionEmpleados;
 
 /**
  *
@@ -11,14 +9,26 @@ package InterfazGrafica;
  */
 public class MenuChofer extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuChofer
-     */
+   
+    private ColeccionEmpleados empleados;
+    
+    
     public MenuChofer() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
 
+    public MenuChofer(ColeccionEmpleados e){
+        initComponents();
+        empleados=e;
+        setTitle("Menu Chofer");
+        setResizable(false);
+        this.setLocationRelativeTo(null);
+    }
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,7 +41,6 @@ public class MenuChofer extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         agregarchofer = new javax.swing.JButton();
         listarchofer = new javax.swing.JButton();
-        Modificarchofer = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
         atras = new javax.swing.JButton();
 
@@ -55,9 +64,6 @@ public class MenuChofer extends javax.swing.JFrame {
                 listarchoferActionPerformed(evt);
             }
         });
-
-        Modificarchofer.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
-        Modificarchofer.setText("Modificar Chofer");
 
         eliminar.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         eliminar.setText("Dar de Baja Chofer");
@@ -89,7 +95,6 @@ public class MenuChofer extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(agregarchofer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(listarchofer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Modificarchofer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE))))
                 .addContainerGap(200, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -107,37 +112,35 @@ public class MenuChofer extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(listarchofer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(Modificarchofer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
                 .addComponent(eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addGap(99, 99, 99)
                 .addComponent(atras, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarchoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarchoferActionPerformed
-        AgregarChofer añadirChofer =new AgregarChofer();
+        AgregarChofer añadirChofer =new AgregarChofer(empleados);
         añadirChofer.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_agregarchoferActionPerformed
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
- MenuEmpleadosPrincipal menuEmpleadosPrincipal = new MenuEmpleadosPrincipal();
+ MenuEmpleadosPrincipal menuEmpleadosPrincipal = new MenuEmpleadosPrincipal(empleados);
      menuEmpleadosPrincipal.setVisible(true);
      this.dispose();        
     }//GEN-LAST:event_atrasActionPerformed
 
     private void listarchoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarchoferActionPerformed
-        ListarChofer listarChofer=new ListarChofer();
+        ListarChofer listarChofer=new ListarChofer(empleados);
         listarChofer.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_listarchoferActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-       BajaChofer bajaChofer=new BajaChofer();
+       BajaChofer bajaChofer=new BajaChofer(empleados);
        bajaChofer.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_eliminarActionPerformed
@@ -178,7 +181,6 @@ public class MenuChofer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Modificarchofer;
     private javax.swing.JButton agregarchofer;
     private javax.swing.JButton atras;
     private javax.swing.JButton eliminar;

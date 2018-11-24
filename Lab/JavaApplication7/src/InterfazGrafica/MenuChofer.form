@@ -34,7 +34,6 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="agregarchofer" max="32767" attributes="0"/>
                           <Component id="listarchofer" max="32767" attributes="0"/>
-                          <Component id="Modificarchofer" max="32767" attributes="0"/>
                           <Component id="eliminar" pref="201" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -58,12 +57,10 @@
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="listarchofer" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="Modificarchofer" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="eliminar" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
               <Component id="atras" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace pref="17" max="32767" attributes="0"/>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,14 +95,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listarchoferActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="Modificarchofer">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Bell MT" size="18" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Modificar Chofer"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="eliminar">
       <Properties>
