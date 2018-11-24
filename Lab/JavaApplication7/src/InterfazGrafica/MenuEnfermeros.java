@@ -13,13 +13,13 @@ public class MenuEnfermeros extends javax.swing.JFrame {
      
     public MenuEnfermeros() {
         initComponents();
-       // this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
     }
     
     public MenuEnfermeros(ColeccionEmpleados e){
         initComponents();
         empleados=e;
-        setTitle("Menu Doctor");
+        setTitle("Menu Enfermero");
         setResizable(false);
         this.setLocationRelativeTo(null);
     }
@@ -138,7 +138,7 @@ public class MenuEnfermeros extends javax.swing.JFrame {
     }//GEN-LAST:event_listaenfermeroActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-        BajaEnfermero bajaEnfermero=new BajaEnfermero();
+        BajaEnfermero bajaEnfermero=new BajaEnfermero(empleados);
         bajaEnfermero.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_eliminarActionPerformed

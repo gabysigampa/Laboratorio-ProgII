@@ -15,7 +15,6 @@ public class ListarChofer extends javax.swing.JFrame {
     
     public ListarChofer() {
         initComponents();
-         this.setLocationRelativeTo(null);
     }
 
     
@@ -43,7 +42,8 @@ public class ListarChofer extends javax.swing.JFrame {
         
         MenuChofer menuChofer =new MenuChofer(empleados);
         menuChofer.setVisible(true);
-         this.dispose();
+        dispose();
+        
     }
     
     

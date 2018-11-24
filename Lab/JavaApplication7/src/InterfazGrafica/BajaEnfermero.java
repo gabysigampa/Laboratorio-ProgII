@@ -1,9 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package InterfazGrafica;
+
+import javaapplication7.ColeccionEmpleados;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,14 +10,24 @@ package InterfazGrafica;
  */
 public class BajaEnfermero extends javax.swing.JFrame {
 
-    /**
-     * Creates new form BajaEnfermero
-     */
+    private ColeccionEmpleados empleados;
+    
     public BajaEnfermero() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
 
+    
+    public BajaEnfermero(ColeccionEmpleados e){
+        initComponents();
+        setTitle("Baja Enfermero");
+        setResizable(false);
+         this.setLocationRelativeTo(null);
+    }
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,6 +61,11 @@ public class BajaEnfermero extends javax.swing.JFrame {
 
         aceptar.setFont(new java.awt.Font("Bell MT", 0, 14)); // NOI18N
         aceptar.setText("Aceptar");
+        aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aceptarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,10 +109,38 @@ public class BajaEnfermero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-       MenuEnfermeros menuEnfermeros= new MenuEnfermeros();
+       MenuEnfermeros menuEnfermeros= new MenuEnfermeros(empleados);
        menuEnfermeros.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed
+
+    private void aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarActionPerformed
+       
+         String dni= ingresodni.getText();
+        ColeccionEmpleados bajaEnfermero;
+        bajaEnfermero= null;
+        
+        for(ColeccionEmpleados i: empleados.getEnfermeros()){
+            if(i.getDni().equals(dni))
+                bajaEnfermero=i;
+        }
+        
+        if(bajaEnfermero!=null){
+            empleados.getEnfermeros().remove(bajaEnfermero);
+            JOptionPane.showMessageDialog(null, "Enfermero dado de Baja", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null, "No se Encuentra Enfermero", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }if(dni==null){
+                
+                
+                    JOptionPane.showMessageDialog(null, "No Ingreso DNI, Intente nuevamente", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+        }
+       //regresamos al menu anterior
+                                                
+       MenuEnfermeros menuEnfermeros= new MenuEnfermeros(empleados);
+       menuEnfermeros.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_aceptarActionPerformed
 
     /**
      * @param args the command line arguments

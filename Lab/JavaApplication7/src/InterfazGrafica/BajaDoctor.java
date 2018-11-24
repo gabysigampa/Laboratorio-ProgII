@@ -152,7 +152,7 @@ public class BajaDoctor extends javax.swing.JFrame {
     }//GEN-LAST:event_aceptarActionPerformed
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
-        MenuDoctores menuDoctores =new MenuDoctores();
+        MenuDoctores menuDoctores =new MenuDoctores(empleados);
         menuDoctores.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelarActionPerformed

@@ -43,7 +43,6 @@ public class ListarEnfermero extends javax.swing.JFrame {
       MenuEnfermeros menuEnfermeros= new MenuEnfermeros(empleados);
        menuEnfermeros.setVisible(true);
        this.dispose();
-    
   }
     
     
