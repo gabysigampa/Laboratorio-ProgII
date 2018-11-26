@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         
         ColeccionEmpleados cole= new ColeccionEmpleados();
-        
+       
         
          
       
@@ -27,12 +27,13 @@ public class Main {
         
         Chofer chof=new Chofer("miguel","fadel","masculino","300006897","guemes","0800",12,12,1956,"chofer","0012","activo");
         cole.setChoferes(chof);
+        Afiliado afiliado=new Afiliado("miguel","fadel","masculino","300006897","guemes","0800",12,12,1956,"00012",1000);
         
         MenuPrincipal interfaz=new MenuPrincipal(cole);
         interfaz.setVisible(true);
          
-         
-         
+      // MenuPrincipal interfaz2 = new MenuPrincipal(afiliado);
+       //interfaz.setVisible(true);  
          
     } 
 }

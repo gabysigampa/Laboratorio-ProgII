@@ -2,6 +2,7 @@
 package InterfazGrafica;
 
 
+import javaapplication7.Afiliado;
 import javaapplication7.ColeccionEmpleados;
 
 /**
@@ -11,6 +12,7 @@ import javaapplication7.ColeccionEmpleados;
 public class MenuPrincipal extends javax.swing.JFrame {
 
     private ColeccionEmpleados empleados;
+    private Afiliado afiliado;
     
     public MenuPrincipal() {
         initComponents();
@@ -27,6 +29,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setResizable(false);
         this.setLocationRelativeTo(null);
     }
+     /* private MenuPrincipal(Afiliado a){
+        initComponents();
+        afiliado=a;
+        setTitle("Sistema de Emergencia Medica - Menu Principal"); 
+        setResizable(false);
+        this.setLocationRelativeTo(null);
+       */   
        
      
 
