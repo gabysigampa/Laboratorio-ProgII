@@ -132,6 +132,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Pagos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pagosActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

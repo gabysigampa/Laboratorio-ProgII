@@ -87,6 +87,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pagos.setFont(new java.awt.Font("Bell MT", 0, 18)); // NOI18N
         pagos.setText("Pagos");
+        pagos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pagosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,6 +163,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_gestionarEmpleadoActionPerformed
+
+    private void pagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagosActionPerformed
+         // TODO add your handling code here:
+         Pago pago=new Pago();
+         pago.setVisible(true);
+         dispose();
+    }//GEN-LAST:event_pagosActionPerformed
 
     /**
      * @param args the command line arguments
