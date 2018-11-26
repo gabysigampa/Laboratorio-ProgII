@@ -112,8 +112,10 @@ public class MenuAsistencias extends javax.swing.JFrame {
 
     private void brindarasistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brindarasistenciaActionPerformed
         // TODO add your handling code here:
-        DniFamiliar dnif=new DniFamiliar();
-        dnif.setVisible(true);
+        //DniFamiliar dnif=new DniFamiliar();
+        //dnif.setVisible(true);
+        ElegirEmpleados eleg=new ElegirEmpleados();
+        eleg.setVisible(true);
         dispose();
     }//GEN-LAST:event_brindarasistenciaActionPerformed
 
