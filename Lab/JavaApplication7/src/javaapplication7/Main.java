@@ -11,12 +11,12 @@ public class Main {
     public static void main(String[] args) {
         
         ColeccionEmpleados cole= new ColeccionEmpleados();
-       
+       Sistema sis=new Sistema();
         
-         
-      
+        Afiliado afil =new Afiliado("Jose", "Perez", "masculino", "39015819", "Calle 123", "344343", 01, 01, 1990, "023x", 1001 );
+        sis.setAfiliados(afil);
         
-       Administrativo admin=new Administrativo("braian","salavarria","masculino","38915932","san antonio","000000",10,10,1998,"empleado","0001","activo");
+        Administrativo admin=new Administrativo("braian","salavarria","masculino","38915932","san antonio","000000",10,10,1998,"empleado","0001","activo");
         cole.setAdministrativos(admin);
         
         Doctor doc=new Doctor("manuel","aguirrez","masculino","300006897","cordova svc","0800",12,12,1956,"doctor","0012","activo");
@@ -27,7 +27,9 @@ public class Main {
         
         Chofer chof=new Chofer("miguel","fadel","masculino","300006897","guemes","0800",12,12,1956,"chofer","0012","activo");
         cole.setChoferes(chof);
+        
         Afiliado afiliado=new Afiliado("miguel","fadel","masculino","300006897","guemes","0800",12,12,1956,"00012",1000);
+        sis.setAfiliados(afiliado);
         
         MenuPrincipal interfaz=new MenuPrincipal(cole);
         interfaz.setVisible(true);

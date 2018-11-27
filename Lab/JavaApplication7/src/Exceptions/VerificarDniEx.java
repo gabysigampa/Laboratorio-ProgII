@@ -14,5 +14,5 @@ public class VerificarDniEx extends Exception{
         super(mensaje);
     }
     
-    VerificarDniEx(){}
+    public VerificarDniEx(){}
 }
